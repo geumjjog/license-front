@@ -9,7 +9,8 @@ import "../css/Detail.css";
 import "../css/DetailBook.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 const Detail = () => {
@@ -345,7 +346,7 @@ const Detail = () => {
                 className={`star-icon ${isStarYellow ? "yellow" : ""}`}
                 onClick={handleStarClick}
               >
-                &#9733;
+                <FontAwesomeIcon icon={faStar} />
               </span>
             </span>
           )}
@@ -530,57 +531,69 @@ const Detail = () => {
           <Button variant="info" onClick={handleButtonClick}>more</Button>{' '}
           </div>
           <div id="rank">
-  {/* YES24 도서 목록의 첫 번째 도서 출력 */}
-  {yes24Data.length > 0 && (
-    <div className="card-container">
-      <Card key={1} style={{ width: "18rem" }}>
-      <Card.Title className="card-category">YES24</Card.Title>
-        <Card.Img variant="top" src={yes24Data[0].imageName} style={{ width: '180px', height: '200px' }} />
-        <Card.Body>
-          <Card.Title>
-            <span>{yes24Data[0].bookName}</span>
-          </Card.Title>
-          <Card.Text className="card-text-custom">{yes24Data[0].bookPrice} <span className="small">원</span></Card.Text>
-          <Button variant="primary">자세히보기</Button>
-        </Card.Body>
-      </Card>
-    </div>
-  )}
+            {/* YES24 도서 목록의 첫 번째 도서 출력 */}
+            {yes24Data.length > 0 && (
+              <div className="card-container">
+                <Card key={1} style={{ width: "18rem" }}>
+                  <Card.Title className="card-category">YES24</Card.Title>
+                  <Card.Img variant="top" src={yes24Data[0].imageName} style={{ width: '180px', height: '200px' }} />
+                  <Card.Body>
+                    <Card.Title>
+                      <span>{yes24Data[0].bookName}</span>
+                    </Card.Title>
+                    <Card.Text className="card-text-custom">{yes24Data[0].bookPrice} <span className="small">원</span></Card.Text>
+                    <a href={yes24Data[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                      <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                        자세히보기
+                      </button>
+                    </a>
+                  </Card.Body>
+                </Card>
+              </div>
+            )}
 
-  {/* Kyobo 도서 목록의 첫 번째 도서 출력 */}
-  {kyoboData.length > 0 && (
-    <div className="card-container">
-      <Card key={2} style={{ width: "18rem" }}>
-      <Card.Title className="card-category">KYOBO</Card.Title>
-        <Card.Img variant="top" src={kyoboData[0].imageName} style={{ width: '180px', height: '200px' }} />
-        <Card.Body>
-          <Card.Title>
-            <span>{kyoboData[0].bookName}</span>
-          </Card.Title>
-          <Card.Text className="card-text-custom">{kyoboData[0].bookPrice} <span className="small">원</span></Card.Text>
-          <Button variant="primary">자세히보기</Button>
-        </Card.Body>
-      </Card>
-    </div>
-  )}
+            {/* Kyobo 도서 목록의 첫 번째 도서 출력 */}
+            {kyoboData.length > 0 && (
+              <div className="card-container">
+                <Card key={2} style={{ width: "18rem" }}>
+                  <Card.Title className="card-category">KYOBO</Card.Title>
+                  <Card.Img variant="top" src={kyoboData[0].imageName} style={{ width: '180px', height: '200px' }} />
+                  <Card.Body>
+                    <Card.Title>
+                      <span>{kyoboData[0].bookName}</span>
+                    </Card.Title>
+                    <Card.Text className="card-text-custom">{kyoboData[0].bookPrice} <span className="small">원</span></Card.Text>
+                    <a href={kyoboData[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                      <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                        자세히보기
+                      </button>
+                    </a>
+                  </Card.Body>
+                </Card>
+              </div>
+            )}
 
-  {/* Aladin 도서 목록의 첫 번째 도서 출력 */}
-  {aladinData.length > 0 && (
-    <div className="card-container">
-      <Card key={3} style={{ width: "18rem" }}>
-      <Card.Title className="card-category">ALADIN</Card.Title>
-        <Card.Img variant="top" src={aladinData[0].imageName} style={{ width: '180px', height: '200px' }} />
-        <Card.Body>
-          <Card.Title>
-            <span>{aladinData[0].bookName}</span>
-          </Card.Title>
-          <Card.Text className="card-text-custom">{aladinData[0].bookPrice} <span className="small">원</span></Card.Text>
-          <Button variant="primary">자세히보기</Button>
-        </Card.Body>
-      </Card>
-    </div>
-  )}
-</div>
+            {/* Aladin 도서 목록의 첫 번째 도서 출력 */}
+            {aladinData.length > 0 && (
+              <div className="card-container">
+                <Card key={3} style={{ width: "18rem" }}>
+                  <Card.Title className="card-category">ALADIN</Card.Title>
+                  <Card.Img variant="top" src={aladinData[0].imageName} style={{ width: '180px', height: '200px' }} />
+                  <Card.Body>
+                    <Card.Title>
+                      <span>{aladinData[0].bookName}</span>
+                    </Card.Title>
+                    <Card.Text className="card-text-custom">{aladinData[0].bookPrice} <span className="small">원</span></Card.Text>
+                    <a href={aladinData[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                      <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                        자세히보기
+                      </button>
+                    </a>
+                  </Card.Body>
+                </Card>
+              </div>
+            )}
+          </div>
 
 
 

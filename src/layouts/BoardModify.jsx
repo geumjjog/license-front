@@ -5,7 +5,7 @@ import "../css/BoardWrite.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const BoardWrite = () => {
+const BoardModify = () => {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -107,7 +107,7 @@ const handleSubmit = async (e) => {
     <Header />
     <hr />
     <div className="form-container">
-      <h2>COMMUNITY 게시글 등록</h2>
+      <h2>COMMUNITY 게시글 수정</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -137,4 +137,4 @@ const handleSubmit = async (e) => {
     </>
   );
 };
-export default BoardWrite;
+export default BoardModify;

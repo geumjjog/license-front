@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Button from "react-bootstrap/Button";
@@ -11,72 +11,75 @@ import {
 import "../css/Board.css";
 import { Link } from "react-router-dom";
 import Quick from "../components/Quick/Quick";
+import axios from "axios";
 
 const Board = () => {
-  const [selectedButton, setSelectedButton] = useState("notice"); // 기본 선택은 공지사항
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
-  const itemsPerPage = 3; // 페이지당 보여줄 아이템 수
+  const [selectedButton, setSelectedButton] = useState("notice");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // 한 페이지당 보여줄 아이템 수
+  const [boardList, setBoardList] = useState([]);
+  const [member, setMember] = useState({
+    memberNum: "",
+    memberName: "",
+    username: "",
+    password: "",
+    email: "",
+    domain: "",
+    phoneNum: "",
+    socialNum1: "",
+    socialNum2: "",
+  });
 
-  const initialData = [
-    {
-      id: 1,
-      name: "게시글제목",
-      instructor: "가격",
-      totalLessons: "3000",
-      category: "notice",
-    },
-    {
-      id: 2,
-      name: "freeboard",
-      instructor: "가격",
-      totalLessons: "5000",
-      category: "freeboard",
-    },
-    {
-      id: 3,
-      name: "community-report",
-      instructor: "가격",
-      totalLessons: "15000",
-      category: "community-report",
-    },
-    {
-      id: 4,
-      name: "copyright-report",
-      instructor: "가격",
-      totalLessons: "20000",
-      category: "copyright-report",
-    },
-    {
-      id: 5,
-      name: "게시글제목3",
-      instructor: "가격",
-      totalLessons: "20000",
-      category: "notice",
-    },
-    {
-      id: 6,
-      name: "게시글제목4",
-      instructor: "가격",
-      totalLessons: "20000",
-      category: "notice",
-    },
-  ];
+  useEffect(() => {
+    const fetchMemberInfo = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.post("/getMemberInfo", null, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.data.result === "Success") {
+          setMember({
+            memberNum: response.data.currentMember.memberNum,
+            memberName: response.data.currentMember.memberName,
+            password: "",
+            email: response.data.currentMember.email,
+            domain: "",
+            phoneNum: response.data.currentMember.phoneNum,
+            id: response.data.currentMember.username,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching member info:", error);
+      }
+    };
+    fetchMemberInfo();
+  }, []);
 
-  const handleButtonClick = (button) => {
-    setSelectedButton(button);
-    setCurrentPage(1); // 버튼이 변경되면 페이지를 1로 초기화
-  };
+  useEffect(() => {
+    const fetchBoardList = async () => {
+      try {
+        const response = await axios.get('/board/boardList');
+        setBoardList(response.data);
+      } catch (error) {
+        console.error('Error fetching board list:', error);
+      }
+    };
 
-  const filteredData = initialData.filter((item) => {
+    fetchBoardList();
+  }, []);
+
+  const filteredDatas = boardList.filter((board) => {
     switch (selectedButton) {
       case "notice":
-        return item.category === "notice";
+        return board.defaultValue === "notice";
       case "freeboard":
-        return item.category === "freeboard";
+        return board.defaultValue === "freeboard";
       case "community-report":
-        return item.category === "community-report";
+        return board.defaultValue === "community-report";
       case "copyright-report":
-        return item.category === "copyright-report";
+        return board.defaultValue === "copyright-report";
       default:
         return true;
     }
@@ -85,10 +88,10 @@ const Board = () => {
   // 현재 페이지에 해당하는 데이터 추출
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentData = filteredDatas.slice(indexOfFirstItem, indexOfLastItem);
 
   // 총 페이지 수 계산
-  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredDatas.length / itemsPerPage);
 
   // 페이지 번호 배열 생성
   const pageNumbers = Array.from(
@@ -101,105 +104,101 @@ const Board = () => {
     setCurrentPage(pageNumber);
   };
 
+  const formatDate = (rawDate) => {
+    const date = new Date(rawDate);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+  };
+
+  const handleButtonClick = (buttonName) => {
+    setSelectedButton(buttonName);
+    setCurrentPage(1); // 버튼이 변경되면 페이지를 1로 초기화
+  };
   return (
     <>
-    <Header />
-    <hr />
-    <div id="community-header">
-          <h2>커뮤니티</h2>
-    </div>
-    <div id="Board">
-      <div className="container"> 
-        <div id="community-buttons" className="mb-2">
-          <Button
-            variant="secondary"
-            className={`custom-lg-button ${selectedButton === "notice" ? "active" : ""
-              }`}
-            onClick={() => handleButtonClick("notice")}
-          >
-            <FontAwesomeIcon icon={faBullhorn} className="icon_btn" />
-            공지사항
-          </Button>{" "}
-          <Button
-            variant="secondary"
-            className={`custom-lg-button ${selectedButton === "freeboard" ? "active" : ""
-              }`}
-            onClick={() => handleButtonClick("freeboard")}
-          >
-            <FontAwesomeIcon icon={faComments} className="icon_btn" />
-            자유게시판
-          </Button>{" "}
-          <Button
-            variant="secondary"
-            className={`custom-lg-button ${selectedButton === "community-report" ? "active" : ""
-              }`}
-            onClick={() => handleButtonClick("community-report")}
-          >
-            <FontAwesomeIcon
-              icon={faPersonMilitaryPointing}
-              className="icon_btn"
-            />
-            커뮤니티 신고
-          </Button>{" "}
-          <Button
-            variant="secondary"
-            className={`custom-lg-button ${selectedButton === "copyright-report" ? "active" : ""
-              }`}
-            onClick={() => handleButtonClick("copyright-report")}
-          >
-            <FontAwesomeIcon
-              icon={faPersonMilitaryPointing}
-              className="icon_btn"
-            />
-            권리침해 신고
-          </Button>
+      <Header />
+      <hr className="comu_hr" />
+      <div id="Board">
+        <div id="community_header">
+          <span>커뮤니티</span>
         </div>
-        <hr className="custom-line" />
-      </div>
-    </div>
-    <div className="container">
-      <div id="re_contents">
-        <input type="hidden" value={0} />
-        <Link to="BoardWrite"> {/* Link 컴포넌트를 사용하여 페이지 전환 */}
-          <button>글쓰기</button>
-        </Link>
-        <ul className="your-component">
-          {filteredData.map((item) => (
-            <React.Fragment key={item.id}>
-              <li className="list_container">
-                <div className="text-container">
-                  <a href={`/detail/${item.id}`}>
-                  <h3>{item.name}</h3>
-                  </a>
-                </div>
-                <Link to={`/detail/${item.id}`} className="custom-detail-link">
-                  자세히 보기
+        <div className="custom_line">
+          <hr className="custom-line" />
+        </div>
+        <div className="container">
+          <div id="community-buttons" className="mb-2">
+            <Button
+              variant="secondary"
+              className={`custom-lg-button ${selectedButton === "notice" ? "active" : ""}`}
+              onClick={() => handleButtonClick("notice")}
+            >
+              <FontAwesomeIcon icon={faBullhorn} className="icon_btn" />
+              공지사항
+            </Button>{" "}
+            <Button
+              variant="secondary"
+              className={`custom-lg-button ${selectedButton === "freeboard" ? "active" : ""}`}
+              onClick={() => handleButtonClick("freeboard")}
+            >
+              <FontAwesomeIcon icon={faComments} className="icon_btn" />
+              자유게시판
+            </Button>{" "}
+          </div>
+        </div>
+
+        <div className="container">
+          <div id="re_contents">
+            <input type="hidden" value={0} />
+            <div className="button-container">
+              {member.id && (
+                <Link to="/BoardWrite">
+                  <button>글쓰기</button>
                 </Link>
-              </li>
-              <hr />
-            </React.Fragment>
-          ))}
-        </ul>
+              )}
+            </div>
+            <ul className="your-component">
+              {currentData.map((board) => (
+                <React.Fragment key={board.boardSeq}>
+                  <li className="list_container">
+                    <div className="text-container">
+                      <Link to={`/BoardView/${board.boardSeq}`}>
+                        <h3>{board.boardTitle}</h3>
+                      </Link>
+                    </div>
+                    <div className="boardDate">
+                      <span>{formatDate(board.boardDate)}</span>
+                    </div>
+                  </li>
+                  <hr />
+                </React.Fragment>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      <div id="pagination">
+      <div className="pagination-container">
         <ul className="pagination">
           {pageNumbers.map((number) => (
-            <li
-              key={number}
-              className={number === currentPage ? "active" : ""}
-            >
-              <a href="#" onClick={() => handlePageChange(number)}>
+            <li key={number} className="page-item">
+              <button
+                onClick={() => handlePageChange(number)}
+                className={`page-link ${currentPage === number ? 'active' : ''}`}
+              >
                 {number}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
       </div>
-    </div>
-    <Quick />
-    <Footer />
-  </>
-  
+      <Quick />
+      <Footer />
+    </>
   );
 };
 

@@ -1,0 +1,49 @@
+/* PostForm.css 수정된 부분 */
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px; /* 패딩을 늘림 */
+	border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	max-width: 900px; /* 최대 너비를 늘림 */
+	margin: 20px auto; /* 상하 마진 추가 */
+	margin-top: 40px;
+	margin-bottom: 50px;
+  }
+  
+  .styled-input,
+  .styled-textarea {
+	width: 100%;
+	padding: 15px; /* 패딩을 늘림 */
+	margin: 15px 0; /* 마진을 늘림 */
+	border-radius: 5px;
+	border: 2px solid #ccc;
+  }
+  
+  .styled-textarea {
+	height: 200px; /* 텍스트 영역의 높이를 늘림 */
+	
+  }
+  
+  .button-group {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px; /* 버튼 그룹의 상단 마진을 늘림 */
+  }
+  
+  .button {
+	padding: 10px 30px; /* 버튼의 패딩을 늘림 */
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	background-color: #007bff;
+	color: #fff;
+	font-size: 16px; /* 버튼의 폰트 사이즈를 조정 */
+  }
+  
+  .button.cancel {
+	background-color: #ccc;
+  }
+  

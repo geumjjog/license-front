@@ -25,6 +25,8 @@ import AdminRoute from "./roleRoute/AdminRoute";
 import RecommendBook from "./layouts/RecommendBook";
 import RecommendBookDetail from "./layouts/RecommendBookDetail";
 import EditMember from "./layouts/EditMember";
+import BoardWrite from "./layouts/BoardWrite";
+import BoardView from "./layouts/BoardView";
 
 const root = document.getElementById("root");
 
@@ -58,6 +60,8 @@ rootElement.render(
       <Route path="/book/:jmfldnm" element={<Book />} />
       <Route path="/RecommendBook" element={<RecommendBook />} />
       <Route path="/RecommendBookDetail" element={<RecommendBookDetail />} />
+      <Route path="/BoardWrite" element={<BoardWrite />} />
+      <Route path="/BoardView/:boardSeq" element={<BoardView />} />
     </Routes>
   </BrowserRouter>
 );
