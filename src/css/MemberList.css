@@ -18,15 +18,30 @@
     padding: 8px;
     text-align: left;
   }
-  
-  .memberlist_controllertable th {
-    background-color: #f2f2f2;
+
+  .memberlist_controller .delete{
+    cursor: pointer;
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .memberlist_controller .delete:hover{
+    color: red;
+  }
+
+  .memberlist_controller .edmit{
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .memberlist_controller .edmit:hover{
+    color: #64aee0;
   }
   
-  .page-container {
+  .memberlist_controller .page-container {
     display: center;
   }
   
-  .page-container button {
+  .memberlist_controller .page-container button {
     margin-right: 5px;
   }

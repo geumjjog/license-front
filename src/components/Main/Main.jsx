@@ -68,6 +68,7 @@ const Main = () => {
         const responseList = await axios.get("/license/list");
         const responseListData = responseList.data;
         setListData(responseListData);
+        console.log(responseListData);
       } catch (error) {
         console.error("Error fetching info:", error);
       }

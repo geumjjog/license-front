@@ -1,3 +1,5 @@
+// MemberList.js
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { removeAccessCookie, removeRefreshCookie } from "../Cookie/cookie";
@@ -9,13 +11,17 @@ import "../css/MemberList.css";
 const MemberList = () => {
   const [members, setMembers] = useState([]);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const pagingBlock = 5;
+
   useEffect(() => {
     fetchMemberList();
-  }, []);
+  }, [currentPage]);
 
   const fetchMemberList = async () => {
     try {
-      const response = await axios.get("/admin/memberlist");
+      const response = await axios.get("admin/memberlist");
       setMembers(response.data.content);
     } catch (error) {
       console.error("Error fetching member list:", error);
@@ -42,6 +48,26 @@ const MemberList = () => {
     }
   };
 
+  const totalPages = Math.ceil(members.length / itemsPerPage);
+
+  const visiblePages = Array.from(
+    { length: Math.min(pagingBlock, totalPages) },
+    (_, index) =>
+      index + Math.floor((currentPage - 1) / pagingBlock) * pagingBlock + 1
+  ).filter((page) => page <= totalPages);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const handlePrev = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - pagingBlock, 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + pagingBlock, totalPages));
+  };
+
   return (
     <>
       <Header />
@@ -61,29 +87,61 @@ const MemberList = () => {
             </tr>
           </thead>
           <tbody>
-            {members.map(
-              (member) =>
-                // username이 null이 아닌 경우에만 해당 행을 렌더링
-                member.username !== null &&
-                member.membership !== "관리자" && (
-                  <tr key={member.memberNum}>
-                    <td>{member.memberName}</td>
-                    <td>{member.username}</td>
-                    <td>{member.email}</td>
-                    <td>{member.phoneNum}</td>
-                    <td>{member.membership}</td>
-                    <td>{member.warning}</td>
-                    <td>
-                      <a onClick={() => deleteMember(member.memberNum)}>탈퇴</a>
-                    </td>
-                    <td>
-                      <Link to={`/editMember/${member.username}`}>수정</Link>
-                    </td>
-                  </tr>
-                )
-            )}
+            {members
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .map(
+                (member) =>
+                  // username이 null이 아닌 경우에만 해당 행을 렌더링
+                  member.username !== null &&
+                  member.membership !== "관리자" && (
+                    <tr key={member.memberNum}>
+                      <td>{member.memberName}</td>
+                      <td>{member.username}</td>
+                      <td>{member.email}</td>
+                      <td>{member.phoneNum}</td>
+                      <td>{member.membership}</td>
+                      <td>{member.warning}</td>
+                      <td>
+                        <a
+                          className="delete"
+                          onClick={() => deleteMember(member.memberNum)}
+                        >
+                          탈퇴
+                        </a>
+                      </td>
+                      <td>
+                        <Link
+                          className="edmit"
+                          to={`/editMember/${member.username}`}
+                        >
+                          수정
+                        </Link>
+                      </td>
+                    </tr>
+                  )
+              )}
           </tbody>
         </table>
+        <div class="page-container">
+          {currentPage > pagingBlock && (
+            <button onClick={handlePrev}>이전</button>
+          )}
+          {visiblePages.map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page)}
+              disabled={page === currentPage}
+            >
+              {page}
+            </button>
+          ))}
+          {totalPages > pagingBlock && (
+            <button onClick={handleNext}>다음</button>
+          )}
+        </div>
       </div>
       <Footer />
     </>

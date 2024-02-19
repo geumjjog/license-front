@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import "../css/EditMember.css";
 
 const EditMember = () => {
-  const [member, setMember] = useState({
-    memberNum: "",
+  const { username } = useParams();
+  const [memberInfo, setMemberInfo] = useState({
     memberName: "",
-    username: "",
     email: "",
-    domain: "",
     phoneNum: "",
-    socialNum1: "",
-    socialNum2: "",
+    membership: "",
+    warning: "",
   });
 
   useEffect(() => {
@@ -22,80 +21,111 @@ const EditMember = () => {
 
   const fetchMemberInfo = async () => {
     try {
-      const token = localStorage.getItem("token");
-      const response = await axios.post("/getMemberInfo", null, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (response.data.result === "Success") {
-        const currentMember = response.data.currentMember;
-        setMember({
-          memberNum: currentMember.memberNum,
-          memberName: currentMember.memberName,
-          username: currentMember.username,
-          email: currentMember.email,
-          domain: "",
-          phoneNum: currentMember.phoneNum,
-          socialNum1: "",
-          socialNum2: "",
-        });
-      }
+      const response = await axios.get(`/getMemberInfoByUsername/${username}`);
+      setMemberInfo(response.data.member);
+      console.log(response.data.member);
     } catch (error) {
       console.error("Error fetching member info:", error);
     }
   };
 
-  const handleChange = (field, value) => {
-    setMember({ ...member, [field]: value });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log("이전 상태:", memberInfo); // 변경 전 상태 출력
+    setMemberInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    console.log("변경 후 상태:", memberInfo); // 변경 후 상태 출력
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  useEffect(() => {
+    console.log(memberInfo); // memberInfo 상태가 변경될 때마다 값을 콘솔에 출력
+  }, [memberInfo]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post("/editMemberInfo", member);
-      if (response.data === "Success") {
-        alert("회원정보 수정 완료!");
-        // 수정이 완료되면 어떤 동작을 수행할지 여기에 추가
-      } else {
-        alert("회원정보 수정 실패!");
-      }
+      await axios.put(`/updateMember/${username}`, {
+        memberName: memberInfo.memberName,
+        email: memberInfo.email,
+        membership: memberInfo.membership,
+      });
+      alert("회원 정보가 성공적으로 수정되었습니다.");
+      toHome();
     } catch (error) {
       console.error("Error updating member info:", error);
     }
   };
 
+  const toHome = () => {
+    window.location.href = "/admin"; // 페이지 이동
+  };
+
   return (
     <>
       <Header />
-      <div className="edit_member_container">
+      <div className="editm-container">
         <h1>회원 정보 수정</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form_group">
-            <label>이름:</label>
-            <input
-              type="text"
-              value={member.memberName}
-              onChange={(e) => handleChange("memberName", e.target.value)}
-            />
-          </div>
-          <div className="form_group">
-            <label>ID:</label>
-            <input type="text" value={member.username} disabled />
-          </div>
-          <div className="form_group">
-            <label>Email:</label>
-            <input type="email" value={member.email} disabled />
-          </div>
-          <div className="form_group">
-            <label>전화번호:</label>
-            <input
-              type="text"
-              value={member.phoneNum}
-              onChange={(e) => handleChange("phoneNum", e.target.value)}
-            />
-          </div>
-          <button type="submit">수정 완료</button>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div className="user_check">
+                    <div className="basic_input">
+                      <input
+                        type="text"
+                        name="username"
+                        value={memberInfo.username}
+                        required
+                      />
+                      <label>아이디*</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="user_check">
+                    <div className="basic_input">
+                      <input
+                        type="text"
+                        name="memberName"
+                        value={memberInfo.memberName}
+                        onChange={handleInputChange}
+                      />
+                      <label>이름</label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="email_input">
+                    <input type="email" name="email" value={memberInfo.email} />
+                    <label>이메일*</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="basic_input">
+                    <input
+                      type="text"
+                      name="membership"
+                      value={memberInfo.membership}
+                      onChange={handleInputChange}
+                    />
+                    <label>회원유형</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button className="editmembr" type="submit">
+            회원정보수정
+          </button>
         </form>
       </div>
       <Footer />

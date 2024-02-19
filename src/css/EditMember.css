@@ -1,42 +1,113 @@
-.edit_member_container {
-    width: 80%;
-    margin: auto;
+
+.editm-container {
+    margin: 50px auto;
+    max-width: 700px;
     padding: 20px;
-  }
+}
+
+.editm-container h1{
+    text-align: center;
+}
   
-  .edit_member_container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .form_group {
-    margin-bottom: 15px;
-  }
-  
-  .form_group label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  .form_group input {
+.editm-container input{
+      border: none;
+      border-bottom: 1px solid #000;
+    }
+    
+.editm-container table{
     width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+.editm-container table td{
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
   }
   
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
+.editm-container table td:first-child {
+    width: 110px;
+  }
+  
+.editm-container .basic_input{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+.editm-container .id_check{
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+.editm-container .id_btn, .mypagee_container .email_btn{
+    font-size: 0.9rem;
+    margin-top: 3px;
+    margin-left: 5px;
+    padding: 8px;
+    height: 100%;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    background-color: #64aee0;
+  }
+  
+.editm-container .editmembr{
+    font-size: 1.2rem;
+    width: 50%;
+    padding: 5px;
+    background-color: #64aee0;
+    color: white;
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
   }
   
-  button:hover {
-    background-color: #0056b3;
+ .signup:hover{
+    background: #166caa;
   }
   
+  
+  
+.editm-container .basic_input,
+.editm-container .email_input{
+    position: relative;
+    margin-top: 20px;
+  }
+  
+.editm-container .basic_input:first-child,
+.editm-container .email_input:first-child {
+    margin-top: 0;
+  }
+  
+.editm-container  .basic_input input,
+.editm-container  .email_input input {
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    outline: none;
+  }
+  
+.editm-container .basic_input label,
+.editm-container .email_input label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    transition: top 0.5s ease;
+  }
+  
+.editm-container .basic_input input:focus + label,
+.editm-container .basic_input input:valid + label,
+.editm-container .email_input input:focus + label,
+.editm-container .email_input input:valid + label  {
+    top: -2px;
+    font-size: 13px;
+    color: #166caa;
+  }

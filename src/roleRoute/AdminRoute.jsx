@@ -32,7 +32,7 @@ const AdminRoute = () => {
     return <>로딩중</>;
   }
   if (role === "ADMIN") {
-    return <MemberList />;
+    return <Outlet />;
   } else {
     // role이 ADMIN이 아닌 경우, 로그인 페이지로 리다이렉트합니다.
     return <Navigate to="/login" />;
