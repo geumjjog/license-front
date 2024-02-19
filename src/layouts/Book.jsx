@@ -305,7 +305,11 @@ const Book = () => {
                     <span>{yes24Data[0].bookName}</span>
                   </Card.Title>
                   <Card.Text className="card-text-custom">{yes24Data[0].bookPrice} <span className="small">원</span></Card.Text>
-                  <Button variant="primary">자세히보기</Button>
+                  <a href={yes24Data[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                    <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                      자세히보기
+                    </button>
+                  </a>
                 </Card.Body>
               </Card>
             )}
@@ -320,7 +324,11 @@ const Book = () => {
                     <span>{kyoboData[0].bookName}</span>
                   </Card.Title>
                   <Card.Text className="card-text-custom">{kyoboData[0].bookPrice} <span className="small">원</span></Card.Text>
-                  <Button variant="primary">자세히보기</Button>
+                  <a href={kyoboData[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                    <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                      자세히보기
+                    </button>
+                  </a>
                 </Card.Body>
               </Card>
             )}
@@ -335,7 +343,11 @@ const Book = () => {
                     <span>{aladinData[0].bookName}</span>
                   </Card.Title>
                   <Card.Text className="card-text-custom">{aladinData[0].bookPrice} <span className="small">원</span></Card.Text>
-                  <Button variant="primary">자세히보기</Button>
+                  <a href={aladinData[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                    <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                      자세히보기
+                    </button>
+                  </a>
                 </Card.Body>
               </Card>
             )}

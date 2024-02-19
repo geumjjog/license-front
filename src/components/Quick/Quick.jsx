@@ -48,7 +48,7 @@ const Quick = () => {
               </Link>
             </li>
             <li>
-              <Link to="/book">
+              <Link to="/RecommendBook">
                 <FontAwesomeIcon id="icon" icon={faBookOpen} />
                 교재추천
               </Link>
