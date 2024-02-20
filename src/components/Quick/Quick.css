@@ -55,3 +55,29 @@
 .scrolled {
     top: 0;
 }
+
+/* "맨 위로" 버튼 스타일 */
+.quick-menu ul li:last-child button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: #64aee0;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.quick-menu ul li:last-child button:hover {
+    color: #23256E; /* 버튼 텍스트 색상 변경 */
+}
+
+.quick-menu ul li:last-child button #icon {
+    display: block;
+    margin: 0 auto 7px;
+    width: 28px;
+    font-size: 25px;
+    color: #64aee0;
+}

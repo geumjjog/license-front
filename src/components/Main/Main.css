@@ -164,3 +164,16 @@
     color: #64aee0;
     font-size: 20px;
 }
+
+.list_container {
+    list-style: none; /* 목록 마커 제거 */
+  }
+  
+  .text-container {
+    margin-right: 180px;
+  }
+
+  .text-container span {
+    margin-right: 5px;
+    text-align: left;
+  }

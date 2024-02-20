@@ -1,8 +1,9 @@
 
 .mypagee_container {
-    margin: 50px auto;
+    margin: 0 auto;
     max-width: 700px;
     padding: 20px;
+    margin-bottom: 50px;
     }
   
   .mypagee_container input{
@@ -183,6 +184,10 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal{
+  z-index: 9999;
 }
 
 /* 모달 제목 스타일 */

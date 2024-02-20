@@ -9,6 +9,7 @@
 #support-container .tab-content {
     padding: 15px;
     background-color: rgb(242, 242, 242, 0.5);
+    margin-bottom: 50px;
   }
 
   #support-container .nav-link:hover {

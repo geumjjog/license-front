@@ -138,6 +138,7 @@ function Test() {
   return (
     <>
       <Header />
+      <hr />
       <div className="test-container">
         <h1>직업 적성검사</h1>
         <div className="test_title">

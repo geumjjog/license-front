@@ -65,6 +65,7 @@ const EditMember = () => {
   return (
     <>
       <Header />
+      <hr />
       <div className="editm-container">
         <h1>회원 정보 수정</h1>
         <form onSubmit={handleSubmit}>

@@ -122,7 +122,7 @@ const Board = () => {
       <hr className="comu_hr" />
       <div id="Board">
         <div id="community_header">
-          <span>커뮤니티</span>
+          <h1>커뮤니티</h1>
         </div>
         <div className="custom_line">
           <hr className="custom-line" />

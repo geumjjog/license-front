@@ -7,7 +7,7 @@ const imageData = [
     label: "Image 1",
     alt: "image1",
     src: banner1,
-    href: "/lecture",
+    href: "/workbook",
   },
 
   {

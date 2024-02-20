@@ -138,73 +138,76 @@ class MBTI extends Component {
       recommendedLicense4,
     } = this.state;
     return (
-      <div className="Mbti-container">
-        <div className="Mbti">
-          <div className="container text-center">
-            <div className="card">
-              <div className="card-header">
-                <h2>MBTI 성향 테스트</h2>
-              </div>
-              <div className="card-body">
-                {!showResult && (
-                  <div id="question">
-                    <p>{`Q${currentQuestion + 1}. ${
-                      questions[currentQuestion].question
-                    }`}</p>
-                    {Object.entries(questions[currentQuestion].options).map(
-                      ([key, value]) => (
-                        <div className="form-check" key={key}>
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name={`question${currentQuestion}`}
-                            id={`question${currentQuestion}${key}`}
-                            value={key}
-                            onChange={() => this.handleNextQuestion(key)}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor={`question${currentQuestion}${key}`}
-                          >
-                            {value}
-                          </label>
-                        </div>
-                      )
-                    )}
-                  </div>
-                )}
-                {showResult && (
-                  <div id="result">
-                    <h3>{`당신의 MBTI 유형은 ${mbtiType}입니다.`}</h3>
-                    <p>{`${desc}`}</p>
-                    <h4>추천 자격증</h4>
-                    <p>
-                      <Link to={`/detail/${recommendedLicense1}`}>
-                        {`${recommendedLicense1} `}&nbsp;&nbsp;
-                      </Link>
-                      <Link to={`/detail/${recommendedLicense2}`}>
-                        {`${recommendedLicense2} `}&nbsp;&nbsp;
-                      </Link>
-                      <Link to={`/detail/${recommendedLicense3}`}>
-                        {`${recommendedLicense3} `}&nbsp;&nbsp;
-                      </Link>
-                      <Link
-                        to={`/detail/${recommendedLicense4}`}
-                      >{`${recommendedLicense4}`}</Link>
-                    </p>
-                    <button
-                      className="mbti-btn"
-                      onClick={this.handleRestartTest}
-                    >
-                      다시 검사하기
-                    </button>
-                  </div>
-                )}
+      <>
+        <hr />
+        <div className="Mbti-container">
+          <div className="Mbti">
+            <div className="container text-center">
+              <div className="card">
+                <div className="card-header">
+                  <h2>MBTI 성향 테스트</h2>
+                </div>
+                <div className="card-body">
+                  {!showResult && (
+                    <div id="question">
+                      <p>{`Q${currentQuestion + 1}. ${
+                        questions[currentQuestion].question
+                      }`}</p>
+                      {Object.entries(questions[currentQuestion].options).map(
+                        ([key, value]) => (
+                          <div className="form-check" key={key}>
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name={`question${currentQuestion}`}
+                              id={`question${currentQuestion}${key}`}
+                              value={key}
+                              onChange={() => this.handleNextQuestion(key)}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor={`question${currentQuestion}${key}`}
+                            >
+                              {value}
+                            </label>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
+                  {showResult && (
+                    <div id="result">
+                      <h3>{`당신의 MBTI 유형은 ${mbtiType}입니다.`}</h3>
+                      <p>{`${desc}`}</p>
+                      <h4>추천 자격증</h4>
+                      <p>
+                        <Link to={`/detail/${recommendedLicense1}`}>
+                          {`${recommendedLicense1} `}&nbsp;&nbsp;
+                        </Link>
+                        <Link to={`/detail/${recommendedLicense2}`}>
+                          {`${recommendedLicense2} `}&nbsp;&nbsp;
+                        </Link>
+                        <Link to={`/detail/${recommendedLicense3}`}>
+                          {`${recommendedLicense3} `}&nbsp;&nbsp;
+                        </Link>
+                        <Link
+                          to={`/detail/${recommendedLicense4}`}
+                        >{`${recommendedLicense4}`}</Link>
+                      </p>
+                      <button
+                        className="mbti-btn"
+                        onClick={this.handleRestartTest}
+                      >
+                        다시 검사하기
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
