@@ -168,7 +168,9 @@ const Board = () => {
                   <li className="list_container">
                     <div className="text-container">
                       <Link to={`/BoardView/${board.boardSeq}`}>
-                        <h3>{board.boardTitle}</h3>
+                        <span style={{ fontSize: '18px', color: 'black' }}>{board.boardSeq}</span>
+                        <span>&nbsp;</span>
+                        <span style={{ fontSize: '20px', color: '#060e7b' }}>{board.boardTitle}</span>
                       </Link>
                     </div>
                     <div className="boardDate">

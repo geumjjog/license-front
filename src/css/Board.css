@@ -1,11 +1,13 @@
 /* 전체 컨테이너 스타일링 */
 #Board {
   padding: 0 108px;
-  
 }
 
 .container {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .comu_hr {
@@ -23,6 +25,7 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  text-align: center;
   
 }
 
@@ -89,7 +92,7 @@ text-decoration: underline;
   color: #757df6;
   text-decoration: none;
   font-weight: bold;
-  margin-left: 750px; /* 버튼과의 간격 조절 */
+  margin-left: 700px; /* 버튼과의 간격 조절 */
 }
 
 .custom-detail-link:hover {
@@ -101,51 +104,41 @@ text-decoration: underline;
   
   margin-bottom: 30px;
 }
-/* 페이지네이션 스타일링 */
-/* #pagination {
-  float: right;
-  margin-top: 20px;
-  text-align: center;
-}
 
-.pagination {
+.pagination-container {
   display: flex;
-  list-style: none;
-  padding: 0;
   justify-content: center;
 }
 
-.pagination li {
-  margin-right: 10px;
+.pagination {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.pagination a {
+.page-item {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.page-link {
   text-decoration: none;
-  color: #757df6;
-  font-weight: bold;
-  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
-.pagination a.active {
-  color: white;
-  background-color: #757df6;
-  border-radius: 5px;
-  padding: 5px 10px;
+.page-link.active {
+  background-color: #007bff;
+  color: #fff;
 }
 
-/* 게시글 제목과 간격 조절 */
-/* .list_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px; 
-} */
-/*
-.text-container h3 {
-  font-size: 20px;
-  margin: 0;
-} */
+li.page-item button {
+  border: none;
+}
 
 
 

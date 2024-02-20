@@ -24,6 +24,9 @@ import RecommendBook from "./layouts/RecommendBook";
 import RecommendBookDetail from "./layouts/RecommendBookDetail";
 import EditMember from "./layouts/EditMember";
 import MemberList from "./layouts/MemberList";
+import BoardWrite from "./layouts/BoardWrite";
+import BoardView from "./layouts/BoardView";
+import BoardModify from "./layouts/BoardModify";
 
 function App() {
   return (
@@ -55,6 +58,9 @@ function App() {
       <Route path="/book/:jmfldnm" element={<Book />} />
       <Route path="/RecommendBook" element={<RecommendBook />} />
       <Route path="/RecommendBookDetail" element={<RecommendBookDetail />} />
+      <Route path="/BoardWrite" element={<BoardWrite />} />
+      <Route path="/BoardView/:boardSeq" element={<BoardView />} />
+      <Route path="/BoardModify/:boardSeq" element={<BoardModify />} />
     </Routes>
   );
 }

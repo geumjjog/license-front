@@ -34,6 +34,7 @@ const handleSubmit = async (e) => {
     
     // 회원 정보도 FormData에 추가
     formData.append('memberId', member.id);
+    formData.append('comment', member.memberName);
 
     // BoardWrite API로 데이터 전송
     const response = await axios.post('/board/boardWrite', formData, {
@@ -43,6 +44,7 @@ const handleSubmit = async (e) => {
       },
     });
 
+    window.location.href = "/community"; // 페이지 이동
     // 성공 시 처리
     console.log('Board write success:', response.data);
   } catch (error) {
@@ -57,6 +59,8 @@ const handleSubmit = async (e) => {
     setTitle('');
     setContent('');
     setFile(null);
+
+    window.location.href = "/community";
   };
 
   //멤버정보 불러오기
@@ -109,27 +113,31 @@ const handleSubmit = async (e) => {
     <div className="form-container">
       <h2>COMMUNITY 게시글 등록</h2>
       <form onSubmit={handleSubmit}>
+      <label htmlFor="title">작성자</label>
         <input
           type="text"
-          placeholder="제목"
+          value={member.memberName}
+          className="styled-input"
+          readOnly
+        />
+        <label htmlFor="title">제목</label>
+        <input
+          type="text"
+          placeholder="제목을 입력하세요"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           className="styled-input"
         />
-        <input
-          type="file"
-          onChange={handleFileChange}
-          className="styled-input"
-        />
+        <label htmlFor="title">내용</label>
         <textarea
-          placeholder="내용"
+          placeholder="내용을 입력하세요"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           className="styled-textarea"
         ></textarea>
         <div className="button-group">
           <button type="button" className="button cancel" onClick={handleReset}>취소</button>
-          <Link to="/community"><button type="submit" className="button">확인</button></Link>
+          <button type="submit" className="button" onClick={handleSubmit}>확인</button>
         </div>
       </form>
     </div>
