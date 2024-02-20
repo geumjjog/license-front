@@ -6,6 +6,7 @@ import {
   faClipboard,
   faBookOpen,
   faFileZipper,
+  faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Quick.css";
 
@@ -14,6 +15,13 @@ const Quick = () => {
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 2000);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -38,7 +46,7 @@ const Quick = () => {
             <li>
               <a href="/mbti">
                 <FontAwesomeIcon id="icon" icon={faClipboard} />
-                적성검사
+                성향검사
               </a>
             </li>
             <li>
@@ -52,6 +60,11 @@ const Quick = () => {
                 <FontAwesomeIcon id="icon" icon={faBookOpen} />
                 교재추천
               </Link>
+            </li>
+            <li>
+              <button onClick={scrollToTop}>
+                <FontAwesomeIcon id="icon" icon={faArrowUp} />맨 위로
+              </button>
             </li>
           </ul>
         </div>

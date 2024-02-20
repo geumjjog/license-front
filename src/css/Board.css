@@ -17,8 +17,7 @@
 
 #Board #community_header {
   padding: 0 180px;
-  font-weight: 700;
-  font-size: 40px;
+  text-align: center;
 }
 
 #Board #community_header span{

@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Header = () => {
   const location = useLocation();
@@ -26,6 +27,47 @@ const Header = () => {
   const toHome = () => {
     navigate("/");
   };
+
+  //멤버정보 불러오기
+  const [member, setMember] = useState({
+    memberNum: "",
+    memberName: "",
+    username: "",
+    password: "",
+    email: "",
+    domain: "",
+    phoneNum: "",
+    socialNum1: "",
+    socialNum2: "",
+  });
+
+  useEffect(() => {
+    const fetchMemberInfo = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        console.log(token);
+        const response = await axios.post("/getMemberInfo", null, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.data.result === "Success") {
+          setMember({
+            memberNum: response.data.currentMember.memberNum,
+            memberName: response.data.currentMember.memberName,
+            password: "",
+            email: response.data.currentMember.email,
+            domain: "",
+            phoneNum: response.data.currentMember.phoneNum,
+            username: response.data.currentMember.username,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching member info:", error);
+      }
+    };
+    fetchMemberInfo();
+  }, []);
 
   return (
     <header className="header">
@@ -58,9 +100,15 @@ const Header = () => {
           <ul>
             {isLoggedIn ? (
               <>
-                <li>
-                  <Link to="/mypage">마이페이지</Link>
-                </li>
+                {member.username === "admin123" ? (
+                  <li>
+                    <Link to="/admin">회원관리</Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link to="/mypage">마이페이지</Link>
+                  </li>
+                )}
                 <li>
                   <div className="logout" onClick={handleLogout}>
                     로그아웃

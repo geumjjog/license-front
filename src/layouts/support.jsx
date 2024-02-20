@@ -71,7 +71,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility1}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data1.li_title0} : </span>
                     {data1.li_cont0}
                   </li>
@@ -98,7 +98,7 @@ const Support = () => {
                   <li>
                     <span>{data1.li_title6} : </span>
                     {data1.li_cont6}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -109,7 +109,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility2}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data1.li_title7} : </span>
                     {data1.li_cont7}
                   </li>
@@ -140,7 +140,7 @@ const Support = () => {
                   <li>
                     <span>{data1.li_title14} : </span>
                     {data1.li_cont14}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -151,7 +151,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility3}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data1.li_title15} : </span>
                     {data1.li_cont15}
                   </li>
@@ -166,7 +166,7 @@ const Support = () => {
                   <li>
                     <span>{data1.li_title18} : </span>
                     {data1.li_cont18}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -177,7 +177,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility4}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data1.li_title19} : </span>
                     {data1.li_cont19}
                   </li>
@@ -200,7 +200,7 @@ const Support = () => {
                   <li>
                     <span>{data1.li_title24} : </span>
                     {data1.li_cont24}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
             </Tab>
@@ -225,7 +225,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility1}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data2.li_title0} : </span>
                     {data2.li_cont0}
                   </li>
@@ -252,7 +252,7 @@ const Support = () => {
                   <li>
                     <span>{data2.li_title6} : </span>
                     {data2.li_cont6}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -263,7 +263,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility2}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data2.li_title7} : </span>
                     {data2.li_cont7}
                   </li>
@@ -294,7 +294,7 @@ const Support = () => {
                   <li>
                     <span>{data2.li_title14} : </span>
                     {data2.li_cont14}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -305,7 +305,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility3}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data2.li_title15} : </span>
                     {data2.li_cont15}
                   </li>
@@ -320,7 +320,7 @@ const Support = () => {
                   <li>
                     <span>{data2.li_title18} : </span>
                     {data2.li_cont18}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -331,7 +331,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility4}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data2.li_title19} : </span>
                     {data2.li_cont19}
                   </li>
@@ -354,7 +354,7 @@ const Support = () => {
                   <li>
                     <span>{data2.li_title24} : </span>
                     {data2.li_cont24}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
             </Tab>
@@ -376,7 +376,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility1}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data3.li_title0} : </span>
                     {data3.li_cont0}
                   </li>
@@ -403,7 +403,7 @@ const Support = () => {
                   <li>
                     <span>{data3.li_title6} : </span>
                     {data3.li_cont6}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -414,7 +414,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility2}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data3.li_title7} : </span>
                     {data3.li_cont7}
                   </li>
@@ -445,7 +445,7 @@ const Support = () => {
                   <li>
                     <span>{data3.li_title14} : </span>
                     {data3.li_cont14}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -456,7 +456,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility3}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data3.li_title15} : </span>
                     {data3.li_cont15}
                   </li>
@@ -471,7 +471,7 @@ const Support = () => {
                   <li>
                     <span>{data3.li_title18} : </span>
                     {data3.li_cont18}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -482,7 +482,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility4}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data3.li_title19} : </span>
                     {data3.li_cont19}
                   </li>
@@ -505,7 +505,7 @@ const Support = () => {
                   <li>
                     <span>{data3.li_title24} : </span>
                     {data3.li_cont24}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
             </Tab>
@@ -527,7 +527,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility1}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data4.li_title0} : </span>
                     {data4.li_cont0}
                   </li>
@@ -554,7 +554,7 @@ const Support = () => {
                   <li>
                     <span>{data4.li_title6} : </span>
                     {data4.li_cont6}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -565,7 +565,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility2}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data4.li_title7} : </span>
                     {data4.li_cont7}
                   </li>
@@ -596,7 +596,7 @@ const Support = () => {
                   <li>
                     <span>{data4.li_title14} : </span>
                     {data4.li_cont14}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -607,7 +607,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility3}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data4.li_title15} : </span>
                     {data4.li_cont15}
                   </li>
@@ -622,7 +622,7 @@ const Support = () => {
                   <li>
                     <span>{data4.li_title18} : </span>
                     {data4.li_cont18}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -633,7 +633,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility4}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data4.li_title19} : </span>
                     {data4.li_cont19}
                   </li>
@@ -656,7 +656,7 @@ const Support = () => {
                   <li>
                     <span>{data4.li_title24} : </span>
                     {data4.li_cont24}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
             </Tab>
@@ -678,7 +678,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility1}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data5.li_title0} : </span>
                     {data5.li_cont0}
                   </li>
@@ -705,7 +705,7 @@ const Support = () => {
                   <li>
                     <span>{data5.li_title6} : </span>
                     {data5.li_cont6}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -716,7 +716,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility2}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data5.li_title7} : </span>
                     {data5.li_cont7}
                   </li>
@@ -747,7 +747,7 @@ const Support = () => {
                   <li>
                     <span>{data5.li_title14} : </span>
                     {data5.li_cont14}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -758,7 +758,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility3}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data5.li_title15} : </span>
                     {data5.li_cont15}
                   </li>
@@ -773,7 +773,7 @@ const Support = () => {
                   <li>
                     <span>{data5.li_title18} : </span>
                     {data5.li_cont18}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
               <button
@@ -784,7 +784,7 @@ const Support = () => {
               </button>
               <Dropdown visibility={dropdownVisibility4}>
                 <ul>
-                  {/* <li>
+                  <li>
                     <span>{data5.li_title19} : </span>
                     {data5.li_cont19}
                   </li>
@@ -807,7 +807,7 @@ const Support = () => {
                   <li>
                     <span>{data5.li_title24} : </span>
                     {data5.li_cont24}
-                  </li> */}
+                  </li>
                 </ul>
               </Dropdown>
             </Tab>

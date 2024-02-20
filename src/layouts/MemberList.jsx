@@ -71,6 +71,7 @@ const MemberList = () => {
   return (
     <>
       <Header />
+      <hr />
       <div className="memberlist_controller">
         <h1>회원관리</h1>
         <table>

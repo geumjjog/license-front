@@ -215,6 +215,7 @@ const MyPage = () => {
   return (
     <>
       <Header />
+      <hr />
       <button className="bookmark_btn" onClick={openModal}>
         자격증 즐겨찾기
       </button>
@@ -307,32 +308,35 @@ const MyPage = () => {
       </div>
 
       {isModalOpen && (
-        <div className="modal">
-          <div className="modal_content">
-            <span className="close_btn" onClick={closeModal}>
-              &times;
-            </span>
-            <h2>나의 즐겨찾기 목록</h2>
-            {listStar.filter((star) => star.username === member.id).length ===
-            0 ? (
-              <p>즐겨찾기한 자격증이 없습니다.</p>
-            ) : (
-              <ul>
-                {listStar.map((star) => {
-                  // username이 MyPage의 member.id와 일치하는 경우에만 출력
-                  if (star.username === member.id) {
-                    return (
-                      <li key={star.id}>
-                        <Link to={`/detail/${star.jmnm}`}>{star.jmnm}</Link>
-                      </li>
-                    );
-                  }
-                  return null;
-                })}
-              </ul>
-            )}
+        <>
+          <div className="modal_background"></div>
+          <div className="modal">
+            <div className="modal_content">
+              <span className="close_btn" onClick={closeModal}>
+                &times;
+              </span>
+              <h2>나의 즐겨찾기 목록</h2>
+              {listStar.filter((star) => star.username === member.id).length ===
+              0 ? (
+                <p>즐겨찾기한 자격증이 없습니다.</p>
+              ) : (
+                <ul>
+                  {listStar.map((star) => {
+                    // username이 MyPage의 member.id와 일치하는 경우에만 출력
+                    if (star.username === member.id) {
+                      return (
+                        <li key={star.id}>
+                          <Link to={`/detail/${star.jmnm}`}>{star.jmnm}</Link>
+                        </li>
+                      );
+                    }
+                    return null;
+                  })}
+                </ul>
+              )}
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       <Footer />

@@ -84,10 +84,10 @@ const Main = () => {
   useEffect(() => {
     const fetchBoardList = async () => {
       try {
-        const response = await axios.get('/board/boardList');
+        const response = await axios.get("/board/boardList");
         setBoardList(response.data);
       } catch (error) {
-        console.error('Error fetching board list:', error);
+        console.error("Error fetching board list:", error);
       }
     };
 
@@ -104,10 +104,13 @@ const Main = () => {
         return true;
     }
   });
-  const noticeData = filteredDatas.filter((board) => board.defaultValue === "notice");
+  const noticeData = filteredDatas.filter(
+    (board) => board.defaultValue === "notice"
+  );
 
   return (
     <>
+      <hr />
       <div id="main1">
         <div id="container">
           <div className="flex justify-center items-center carousel">
@@ -166,19 +169,20 @@ const Main = () => {
                   <FontAwesomeIcon icon={faChevronRight} />
                 </a>
               </div>
-              {noticeData.map((board) => (
-            <React.Fragment key={board.boardSeq}>
-              <li className="list_container">
-                <div className="text-container">
-                  <Link to={`/BoardView/${board.boardSeq}`}>
-                    <span>{board.boardSeq}</span>
-                    <span style={{ fontSize: '15px'}}>{board.boardTitle}</span>
-                  </Link>
-                </div>
-              </li>
-              <hr />
-            </React.Fragment>
-          ))}
+              {noticeData.slice(0, 1).map((board) => (
+                <React.Fragment key={board.boardSeq}>
+                  <li className="list_container">
+                    <div className="text-container">
+                      <Link to={`/BoardView/${board.boardSeq}`}>
+                        <span>{board.boardSeq}</span>
+                        <span style={{ fontSize: "15px" }}>
+                          {board.boardTitle}
+                        </span>
+                      </Link>
+                    </div>
+                  </li>
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>
