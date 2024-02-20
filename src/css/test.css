@@ -1,72 +1,159 @@
-.test-container{
+/* 전체 컨테이너 스타일 */
+.test-container {
     padding: 0 108px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto; 
 }
-
-.test-container h1{
+  
+  /* 테스트 제목 스타일 */
+  .test-container h1 {
+    color: #333;
     text-align: center;
     padding: 24px 0;
-    margin: 50px 0px;
-    background-color: #06aee0;
-}
-
-.test-container .test_title p{
+  }
+  
+  /* 테스트 설명 스타일 */
+  .test_title p {
     font-size: 18px;
+    color: #666;
     text-align: center;
-    margin: 50px 0px;
-}
+    padding-bottom: 24px;
+  }
 
-.test-container .question-container h6 span{
-    background-color: #06aee0;
-    border-radius: 30px;
-    color: #fff;
-    padding: 0.2em 0.5em; /* 원하는 패딩 적용 */
-}
 
-.test-container ul{
-    display: flex;
+/* 질문 컨테이너 스타일 */
+.question-container {
+    margin-bottom: 20px;
+    padding: 20px; /* 내부 여백 추가 */
+    border: 1px solid #ddd; /* 테두리 추가 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    border-radius: 8px; /* 테두리의 모서리를 둥글게 만듭니다. */
 }
-
-.test-container ul li{
+  
+  /* 질문 스타일 */
+  .question-container h6 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* 답변 버튼 스타일 */
+  .question-container ul {
     list-style: none;
-}
-
-.test-container ul li button{
+    padding: 0;
+  }
+  
+  .question-container ul li {
+    margin-bottom: 10px;
+  }
+  
+  .question-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:#64aee0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .question-container button:hover {
+    background-color: #007bff;
+  }
+  
+  /* 선택된 답변 버튼 스타일 */
+  .question-container button.selected {
     background-color: #fc0;
-}
-
-.test-container ul li button.selected {
-    background-color: #64aee0; /* 선택된 버튼의 배경색 */
-    color: white; /* 선택된 버튼의 텍스트 색상 */
+  }
+  
+  /* PS 스타일 */
+  .ps {
+    margin: 0 auto; /* 수평 가운데 정렬 */
+    margin-top: 10px; /* 위 여백 추가 */
+    font-size: 14px;
+    color: #666;
+    background-color: #f2f2f2;
+    width: 500px;
+    border-radius: 5px;
 }
   
-.test-container .ps{
-    background-color: #f2f2f2;
+/* 버튼 컨테이너 스타일 */
+.answer-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 버튼을 수평으로 가운데 정렬합니다. */
+    margin-top: 20px; /* 버튼과 질문 사이의 간격을 조정합니다. */
 }
-
-.result-view a {
-    display: inline-block;
+  
+/* 답변 버튼 스타일 */
+.question-container button {
     padding: 10px 20px;
+    margin-right: 10px; /* 버튼 사이 간격 조정 */
+    font-size: 16px;
     background-color: #64aee0;
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px; /* 테두리의 모서리를 둥글게 만듭니다. */
+    width: 150px; /* 버튼의 너비를 고정값으로 설정합니다. */
+}
+  
+  .question-container button:last-child {
+    margin-right: 0; /* 마지막 버튼의 오른쪽 마진을 없애기 */
   }
   
-  .result-view a:hover {
+  .question-container button:hover {
     background-color: #007bff;
   }
-
-  .result-request {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
+  /* 선택된 답변 버튼 스타일 */
+  .question-container button.selected {
+    background-color: #fc0;
   }
 
-  .result-request button {
-    background-color: #64aee0;
-    margin-right: 10px;
-  }
+/* 부모 요소에 대해 flexbox를 사용하여 수평으로 정렬합니다. */
+.result-buttons {
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬합니다. */
+  align-items: center; /* 수직 가운데 정렬합니다. */
+  text-align: center; /* 버튼을 가운데로 정렬합니다. */
+  margin-bottom: 24px;
+}
 
-  .result-request button:hover {
+/* 결과 요청 버튼 스타일 */
+.result-request button {
+    padding: 12px 24px; /* 버튼의 패딩을 더 크게 조정합니다. */
+    font-size: 18px; /* 버튼의 폰트 크기를 키웁니다. */
     background-color: #007bff;
-  }
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px; /* 버튼과 링크 사이의 간격을 조정합니다. */
+    border-radius: 8px; /* 테두리의 모서리를 둥글게 만듭니다. */
+
+}
+
+/* 결과 보기 링크 스타일 */
+.result-buttons a {
+    display: inline-block; /* 링크를 인라인 블록 요소로 설정하여 다른 요소와 옆으로 정렬됩니다. */
+    padding: 12px 24px; /* 버튼의 패딩을 조정합니다. */
+    font-size: 16px; /* 폰트 크기를 조정합니다. */
+    background-color: #007bff; /* 배경색을 설정합니다. */
+    color: #fff; /* 텍스트 색상을 설정합니다. */
+    text-decoration: none; /* 링크 텍스트의 밑줄을 제거합니다. */
+    border: none; /* 테두리를 제거합니다. */
+    border-radius: 8px; /* 테두리의 모서리를 둥글게 만듭니다. */
+    cursor: pointer; /* 커서 모양을 포인터로 설정합니다. */
+    transition: background-color 0.3s ease; /* 배경색 전환에 애니메이션을 적용합니다. */
+    margin-left: 20px; /* 왼쪽 여백을 추가합니다. */
+}
+
+/* 호버 시 배경색 변경 */
+.result-buttons a:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+

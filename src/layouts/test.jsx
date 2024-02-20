@@ -27,14 +27,14 @@ function Test() {
       const data = await response.json();
 
       let score = 1; // 각 질문의 처음 답변에 대해서만 1씩 증가하는 변수
-      const updatedQuestions = data.map(question => ({
+      const updatedQuestions = data.map((question) => ({
         ...question,
         answers: question.answers.map((answer, index) => ({
           ...answer,
-          answerScore: index < 2 ? score++ : answer.answerScore // 처음 두 개의 답변에 대해서만 1씩 증가하는 로직
-        }))
+          answerScore: index < 2 ? score++ : answer.answerScore, // 처음 두 개의 답변에 대해서만 1씩 증가하는 로직
+        })),
       }));
-  
+
       setQuestions(updatedQuestions);
       setSelectedAnswers(Array(updatedQuestions.length).fill(-1));
       setSelectedScores(Array(updatedQuestions.length).fill(null));
@@ -48,18 +48,17 @@ function Test() {
       "Selected answer:",
       questions[questionIndex].answers[answerIndex]
     );
-      setSelectedAnswersText(prevState => {
+    setSelectedAnswersText((prevState) => {
       const newState = [...prevState];
       newState[questionIndex] = `B${questionIndex + 1}`;
       return newState;
     });
 
-    setSelectedScores(prevState => {
+    setSelectedScores((prevState) => {
       const newState = [...prevState];
       newState[questionIndex] = answerScore;
       return newState;
     });
-    
   };
 
   const submitTest = async () => {
@@ -79,20 +78,27 @@ function Test() {
     }
   };
 
-  const selectedAnswersLineArray = selectedScores.map((score, index) => (
-    `${selectedAnswersText[index]}=${score}`
-  ));
+  const selectedAnswersLineArray = selectedScores.map(
+    (score, index) => `${selectedAnswersText[index]}=${score}`
+  );
 
   const selectedAnswersLine = selectedAnswersLineArray.join(" ");
 
   const [response, setResponse] = useState(null);
 
   const handleSubmit = async () => {
-
-    const unansweredQuestionIndex = selectedScores.findIndex(score => score === null);
+    const unansweredQuestionIndex = selectedScores.findIndex(
+      (score) => score === null
+    );
     if (unansweredQuestionIndex !== -1) {
-      alert(`선택되지 않은 질문이 있습니다. 질문 ${unansweredQuestionIndex + 1}으로 이동합니다.`);
-      const unansweredQuestionRef = document.getElementById(`question${unansweredQuestionIndex}`);
+      alert(
+        `선택되지 않은 질문이 있습니다. 질문 ${
+          unansweredQuestionIndex + 1
+        }으로 이동합니다.`
+      );
+      const unansweredQuestionRef = document.getElementById(
+        `question${unansweredQuestionIndex}`
+      );
       if (unansweredQuestionRef) {
         unansweredQuestionRef.scrollIntoView({ behavior: "smooth" });
       }
@@ -109,8 +115,7 @@ function Test() {
         gender: "100323",
         grade: "2",
         startDtm: Date.now(),
-        answers:
-          `${selectedAnswersLine}`,
+        answers: `${selectedAnswersLine}`,
       }),
     };
 
@@ -121,6 +126,13 @@ function Test() {
     } catch (error) {
       console.error("Error submitting career test result:", error);
     }
+  };
+
+  const resetTest = () => {
+    setSelectedAnswers(Array(questions.length).fill(-1));
+    setSelectedScores(Array(questions.length).fill(null));
+    setSelectedAnswersText(Array(questions.length).fill(""));
+    setResponse(null);
   };
 
   return (
@@ -137,17 +149,24 @@ function Test() {
           </p>
         </div>
         {questions.map((question, index) => (
-          <div key={`question${index}`} id={`question${index}`} className="question-container">
+          <div
+            key={`question${index}`}
+            id={`question${index}`}
+            className="question-container"
+          >
             <h6>
               <span>{index + 1}</span> {question.question}
             </h6>{" "}
             {/* 질문 앞에 질문 순서 번호 추가 */}
             <ul>
-              {question.answers.slice(0, 2).map((answer, answerIndex) => (
-                <li key={answerIndex}>
+              <div className="answer-buttons">
+                {question.answers.slice(0, 2).map((answer, answerIndex) => (
                   <button
+                    key={answerIndex}
                     className={
-                      selectedScores[index] === answer.answerScore ? "selected" : ""
+                      selectedScores[index] === answer.answerScore
+                        ? "selected"
+                        : ""
                     }
                     onClick={() =>
                       handleAnswerSelection(
@@ -157,10 +176,10 @@ function Test() {
                       )
                     } // 버튼 클릭 시 해당 답변의 점수 전달
                   >
-                   {answer.answerText}
+                    {answer.answerText}
                   </button>
-                </li>
-              ))}
+                ))}
+              </div>
             </ul>
             <div className="ps">
               <p>
@@ -175,21 +194,25 @@ function Test() {
         ))}
       </div>
       <div className="result-center">
-      <div className="result-request">
-      <button onClick={handleSubmit}>결과 요청 하기</button>
-      {response && (
-        <div>
-          {response.RESULT && (
-            <div className="result-view">
-              <a href={response.RESULT.url} target="_blank" rel="noopener noreferrer">검사 결과 보러가기</a>
-            </div>
-          )}
+        <div className="result-request">
+          <div className="result-buttons">
+            <button onClick={handleSubmit}>결과 요청 하기</button>
+            {response && (
+              <a
+                href={response.RESULT.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="result-link"
+                onClick={resetTest}
+              >
+                검사 결과 보러가기
+              </a>
+            )}
+          </div>
         </div>
-      )}
-    </div>
-    </div>
-    <Quick />
-    <Footer />   
+      </div>
+      <Quick />
+      <Footer />
     </>
   );
 }

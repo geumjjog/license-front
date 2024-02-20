@@ -5,6 +5,7 @@
 
   .memberlist_controller h1{
     text-align: center;
+    padding: 24px 0;
   }
   
   .memberlist_controller table {
@@ -38,10 +39,14 @@
     color: #64aee0;
   }
   
-  .memberlist_controller .page-container {
-    display: center;
+  .memberlist_controller .paging {
+    text-align: center;
   }
   
-  .memberlist_controller .page-container button {
+  .memberlist_controller .paging .ml-btn {
     margin-right: 5px;
+    margin-bottom: 80px;
+    background-color: #64aee0;
+    height: 27px;
+    line-height: 0.5;
   }

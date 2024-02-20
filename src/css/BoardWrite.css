@@ -1,5 +1,5 @@
 /* PostForm.css 수정된 부분 */
-.form-container {
+.write-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,8 +13,8 @@
 	margin-bottom: 50px;
   }
   
-  .styled-input,
-  .styled-textarea {
+  .write-container .styled-input,
+  .write-container .styled-textarea {
 	width: 100%;
 	padding: 15px; /* 패딩을 늘림 */
 	margin: 15px 0; /* 마진을 늘림 */
@@ -23,28 +23,34 @@
 	width: 700px;
   }
   
-  .styled-textarea {
+  .write-container .styled-textarea {
 	height: 200px; /* 텍스트 영역의 높이를 늘림 */
 	
   }
   
-  .button-group {
+  .write-container .button-group {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 30px; /* 버튼 그룹의 상단 마진을 늘림 */
   }
   
-  .button {
+  .write-container .button {
 	padding: 10px 30px; /* 버튼의 패딩을 늘림 */
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
-	background-color: #007bff;
+	background-color: #64aee0;
 	color: #fff;
 	font-size: 16px; /* 버튼의 폰트 사이즈를 조정 */
   }
   
-  .button.cancel {
-	background-color: #ccc;
+  .write-container .button.cancel {
+	background-color: #64aee0;
   }
+
+  .write-container .button:hover, .write-container .button.cancel:hover{
+	opacity: 0.8;
+}
+
+  
   

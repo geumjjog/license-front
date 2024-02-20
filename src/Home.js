@@ -4,10 +4,10 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import Quick from "./components/Quick/Quick";
 
-function Home({ deleteUser }) {
+function Home({}) {
   return (
     <>
-      <Header deleteUser={deleteUser} />
+      <Header />
       <Main />
       <Quick />
       <Footer />

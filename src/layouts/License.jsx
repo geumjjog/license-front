@@ -119,146 +119,151 @@ const License = () => {
   };
 
   return (
-    <div className="centered-container">
-      <h1>자격증 검색</h1>
-      <div className="menu-container">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="검색어 입력"
-            value={searchTerm}
-            onChange={handleSearchTermChange}
-            onKeyPress={handleKeyPress}
-          />
-          <button onClick={handleApplySearch}>검색</button>
-        </div>
+    <>
+      <hr />
+      <div className="centered-container">
+        <h1>자격증 검색</h1>
+        <div className="menu-container">
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="검색어 입력"
+              value={searchTerm}
+              onChange={handleSearchTermChange}
+              onKeyPress={handleKeyPress}
+            />
+            <button onClick={handleApplySearch}>검색</button>
+          </div>
 
-        <div className="dropdown-container">
-          <select
-            value={categories.largeCategory}
-            onChange={(e) =>
-              setCategories({
-                ...categories,
-                largeCategory: e.target.value,
-                mediumCategory: "",
-              })
-            }
-          >
-            <option value="">대분류 선택</option>
-            {categories.largeCategories &&
-              Array.from(new Set(categories.largeCategories)).map(
-                (category) => (
+          <div className="dropdown-container">
+            <select
+              value={categories.largeCategory}
+              onChange={(e) =>
+                setCategories({
+                  ...categories,
+                  largeCategory: e.target.value,
+                  mediumCategory: "",
+                })
+              }
+            >
+              <option value="">대분류 선택</option>
+              {categories.largeCategories &&
+                Array.from(new Set(categories.largeCategories)).map(
+                  (category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  )
+                )}
+            </select>
+
+            <select
+              value={categories.mediumCategory}
+              onChange={(e) =>
+                setCategories({ ...categories, mediumCategory: e.target.value })
+              }
+              disabled={
+                !categories.largeCategory || categories.largeCategory === ""
+              } // 대분류 선택 전이거나 빈 값인 경우 비활성화
+            >
+              <option value="">중분류 선택</option>
+              {data?.response?.body?.items?.item
+                .filter((item) => item.obligfldnm === categories.largeCategory)
+                .map((item) => item.mdobligfldnm)
+                .filter((value, index, self) => self.indexOf(value) === index)
+                .map((category) => (
                   <option key={category} value={category}>
                     {category}
                   </option>
+                ))}
+            </select>
+
+            <select
+              value={categories.grade}
+              onChange={(e) =>
+                setCategories({ ...categories, grade: e.target.value })
+              }
+              disabled={!categories.largeCategory || !categories.mediumCategory}
+            >
+              <option value="">등급</option>
+              {data?.response?.body?.items?.item
+                .filter(
+                  (item) =>
+                    item.obligfldnm === categories.largeCategory &&
+                    item.mdobligfldnm === categories.mediumCategory
                 )
+                .map((item) => item.seriesnm)
+                .filter((value, index, self) => self.indexOf(value) === index) // 중복 제거
+                .map((seriesnm) => (
+                  <option key={seriesnm} value={seriesnm}>
+                    {seriesnm}
+                  </option>
+                ))}
+            </select>
+          </div>
+        </div>
+        <div className="LicenseList">
+          {filteredData ? (
+            <>
+              {filteredData.length > 0 ? (
+                <ul>
+                  {getCurrentPageData().map((item) => (
+                    <li key={item.jmcd}>
+                      <Link
+                        to={{
+                          pathname: `/detail/${encodeURIComponent(
+                            item.jmfldnm
+                          )}`,
+                          state: {
+                            jmcd: item.jmcd,
+                            seriescd: item.seriescd,
+                          },
+                        }}
+                      >
+                        <span className="link-text">
+                          {item.jmfldnm} &nbsp;
+                          {item.jmcd && (
+                            <span className="company">한국산업인력공단</span>
+                          )}
+                        </span>
+                        <br />
+                        {item.jmcd && <p>{item.qualgbnm}</p>}
+                        {item.jmcd && (
+                          <p>
+                            {item.obligfldnm}, {item.mdobligfldnm}
+                          </p>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>검색 결과가 없습니다.</p>
               )}
-          </select>
-
-          <select
-            value={categories.mediumCategory}
-            onChange={(e) =>
-              setCategories({ ...categories, mediumCategory: e.target.value })
-            }
-            disabled={
-              !categories.largeCategory || categories.largeCategory === ""
-            } // 대분류 선택 전이거나 빈 값인 경우 비활성화
-          >
-            <option value="">중분류 선택</option>
-            {data?.response?.body?.items?.item
-              .filter((item) => item.obligfldnm === categories.largeCategory)
-              .map((item) => item.mdobligfldnm)
-              .filter((value, index, self) => self.indexOf(value) === index)
-              .map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-          </select>
-
-          <select
-            value={categories.grade}
-            onChange={(e) =>
-              setCategories({ ...categories, grade: e.target.value })
-            }
-            disabled={!categories.largeCategory || !categories.mediumCategory}
-          >
-            <option value="">등급</option>
-            {data?.response?.body?.items?.item
-              .filter(
-                (item) =>
-                  item.obligfldnm === categories.largeCategory &&
-                  item.mdobligfldnm === categories.mediumCategory
-              )
-              .map((item) => item.seriesnm)
-              .filter((value, index, self) => self.indexOf(value) === index) // 중복 제거
-              .map((seriesnm) => (
-                <option key={seriesnm} value={seriesnm}>
-                  {seriesnm}
-                </option>
-              ))}
-          </select>
+              <div class="page-container">
+                {currentPage > pagingBlock && (
+                  <button onClick={handlePrev}>이전</button>
+                )}
+                {visiblePages.map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => handlePageChange(page)}
+                    disabled={page === currentPage}
+                  >
+                    {page}
+                  </button>
+                ))}
+                {totalPages > pagingBlock && (
+                  <button onClick={handleNext}>다음</button>
+                )}
+              </div>
+            </>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
-      <div className="LicenseList">
-        {filteredData ? (
-          <>
-            {filteredData.length > 0 ? (
-              <ul>
-                {getCurrentPageData().map((item) => (
-                  <li key={item.jmcd}>
-                    <Link
-                      to={{
-                        pathname: `/detail/${encodeURIComponent(item.jmfldnm)}`,
-                        state: {
-                          jmcd: item.jmcd,
-                          seriescd: item.seriescd,
-                        },
-                      }}
-                    >
-                      <span className="link-text">
-                        {item.jmfldnm} &nbsp;
-                        {item.jmcd && (
-                          <span className="company">한국산업인력공단</span>
-                        )}
-                      </span>
-                      <br />
-                      {item.jmcd && <p>{item.qualgbnm}</p>}
-                      {item.jmcd && (
-                        <p>
-                          {item.obligfldnm}, {item.mdobligfldnm}
-                        </p>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>검색 결과가 없습니다.</p>
-            )}
-            <div class="page-container">
-              {currentPage > pagingBlock && (
-                <button onClick={handlePrev}>이전</button>
-              )}
-              {visiblePages.map((page) => (
-                <button
-                  key={page}
-                  onClick={() => handlePageChange(page)}
-                  disabled={page === currentPage}
-                >
-                  {page}
-                </button>
-              ))}
-              {totalPages > pagingBlock && (
-                <button onClick={handleNext}>다음</button>
-              )}
-            </div>
-          </>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 

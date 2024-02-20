@@ -1,48 +1,75 @@
-.Mbti {
-    padding: 0px 108px;
-    margin: 100px 0px;
-}
+  /* Mbti.css */
 
-.card {
-    width: 100%;
-    margin: auto;
-}
-
-#question p {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-#question .form-check {
-    margin-top: 20px;
-    text-align: center;
-}
-
-#result {
-    text-align: center;
-}
-
-#result h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-#result p {
-    font-size: 20px;
-}
-
-
-.form-check-input:checked + .form-check-label::before {
-    border-color: #007bff;
-    background-color: #007bff;
+.Mbti-container {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    height: 80vh;
+  }
+  .Mbti-container .Mbti{
+    margin-bottom: 50px;
   }
   
-  .form-check-input:checked + .form-check-label::after {
-    border-color: #007bff;
+  .Mbti-container .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
   }
-
-  #result h4 {
+  
+  .Mbti-container .card-header {
+    background-color: #64aee0;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+  }
+  
+  .Mbti-container .card-body {
+    padding: 20px;
+  }
+  
+  .Mbti-container #question {
+    text-align: left;
+  }
+  
+  .Mbti-container #question p {
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 20px;
   }
+  
+  .Mbti-container .form-check {
+    margin-bottom: 15px;
+  }
+  
+  .Mbti-container .form-check-label {
+    margin-left: 10px;
+  }
+  
+  .Mbti-container #result {
+    text-align: center;
+  }
+  
+  .Mbti-container #result h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .Mbti-container #result p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .Mbti-container #result h4 {
+    font-size: 20px;
+  }
+  
+  .Mbti-container #result .mbti-btn {
+    background-color: #007bff;
+  }
+
+  .Mbti-container #result .mbti-btn:hover {
+    background-color: #0056b3;
+  }
+  

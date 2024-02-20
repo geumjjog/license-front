@@ -81,7 +81,6 @@ const MemberList = () => {
               <th>Email</th>
               <th>전화번호</th>
               <th>회원유형</th>
-              <th>경고</th>
               <th>관리</th>
               <th>수정</th>
             </tr>
@@ -103,7 +102,6 @@ const MemberList = () => {
                       <td>{member.email}</td>
                       <td>{member.phoneNum}</td>
                       <td>{member.membership}</td>
-                      <td>{member.warning}</td>
                       <td>
                         <a
                           className="delete"
@@ -125,12 +123,15 @@ const MemberList = () => {
               )}
           </tbody>
         </table>
-        <div class="page-container">
+        <div className="paging">
           {currentPage > pagingBlock && (
-            <button onClick={handlePrev}>이전</button>
+            <button className="ml-btn" onClick={handlePrev}>
+              이전
+            </button>
           )}
           {visiblePages.map((page) => (
             <button
+              className="ml-btn"
               key={page}
               onClick={() => handlePageChange(page)}
               disabled={page === currentPage}
@@ -139,7 +140,9 @@ const MemberList = () => {
             </button>
           ))}
           {totalPages > pagingBlock && (
-            <button onClick={handleNext}>다음</button>
+            <button className="ml-btn" onClick={handleNext}>
+              다음
+            </button>
           )}
         </div>
       </div>

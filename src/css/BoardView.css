@@ -1,0 +1,78 @@
+/* community.css */
+
+/* 게시글 보기 컨테이너 */
+.board-view-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .board-view-container h2{
+    text-align: center;
+  }
+
+  /* 폼 그룹 */
+  .board-view-container .form-group {
+    margin-bottom: 5px;
+  }
+  
+  /* 라벨 */
+  .board-view-container label {
+    font-weight: bold;
+  }
+  
+  /* 입력 필드 */
+  .board-view-container .styled-input,
+  .board-view-container .styled-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .board-view-container .styled-textarea {
+    height: 200px;
+  }
+  
+  /* 입력 필드 포커스 상태 */
+  .board-view-container .styled-input:focus,
+  .board-view-container .styled-textarea:focus {
+    border-color: #007bff;
+  }
+  
+  /* 버튼 그룹 */
+  .board-view-container .button-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+/* 버튼 그룹 */
+.board-view-container .button-group {
+    display: flex;
+    justify-content: center; /* 버튼을 가운데로 정렬합니다. */
+    margin-top: 20px; /* 버튼 그룹과 이전으로 버튼 사이의 간격을 조정합니다. */
+  }
+  
+  /* 버튼 */
+  .board-view-container .button-group .button-cancel,
+  .board-view-container .button-group .button-modify,
+  .board-view-container .button-group .button-delete {
+    padding: 10px 20px;
+    margin-right: 10px; /* 버튼 사이 간격 조정 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #64aee0;
+    color: #fff;
+  }
+
+  .board-view-container .button-group .button-cancel:hover,
+  .board-view-container .button-group .button-modify:hover,
+  .board-view-container .button-group .button-delete:hover {
+    opacity: 0.8;
+  }
+  

@@ -1,0 +1,63 @@
+/* community.css */
+
+/* 게시글 수정 폼 컨테이너 */
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 폼 제목 */
+  .form-container .form-heading {
+    text-align: center;
+  }
+  
+  /* 폼 요소 */
+  .form-container .form input,
+  .form-container .form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  /* 입력 필드 포커스 상태 */
+  .form-container .form input:focus,
+  .form-container .form textarea:focus {
+    border-color: #007bff;
+  }
+  
+  /* 버튼 그룹 */
+  .form-container .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* 버튼 */
+  .form-container .button-group button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* 취소 버튼 */
+  .form-container .button-cancel,
+  .form-container .button-reset,
+  .form-container .button-confirm {
+    background-color: #64aee0;
+  }
+  
+  /* 버튼 호버 효과 */
+  .form-container .button-group button:hover {
+    opacity: 0.8;
+  }
+  
