@@ -76,10 +76,6 @@ const Board = () => {
         return board.defaultValue === "notice";
       case "freeboard":
         return board.defaultValue === "freeboard";
-      case "community-report":
-        return board.defaultValue === "community-report";
-      case "copyright-report":
-        return board.defaultValue === "copyright-report";
       default:
         return true;
     }

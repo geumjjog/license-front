@@ -105,6 +105,14 @@ const handleReset = () => {
   setFile(null);
 };
 
+const handleCancle = () => {
+  setTitle('');
+  setContent('');
+  setFile(null);
+
+  window.location.href = "/community";
+};
+
   return (
     <>
     <Header />
@@ -126,7 +134,8 @@ const handleReset = () => {
           className="styled-textarea"
         ></textarea>
         <div className="button-group">
-          <button type="button" className="button cancel" onClick={handleReset}>취소</button>
+          <button type="button" className="button cancel"onClick={handleCancle} >취소</button>
+          <button type="button" className="button" onClick={handleReset}>되돌리기</button>
           <button type="submit" className="button" >확인</button>
         </div>
       </form>

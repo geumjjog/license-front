@@ -20,6 +20,7 @@
 	margin: 15px 0; /* 마진을 늘림 */
 	border-radius: 5px;
 	border: 2px solid #ccc;
+	width: 700px;
   }
   
   .styled-textarea {

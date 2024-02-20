@@ -79,6 +79,33 @@ const Main = () => {
 
   const currentDate = new Date();
 
+  const [boardList, setBoardList] = useState([]);
+  const [selectedButton, setSelectedButton] = useState("notice");
+  useEffect(() => {
+    const fetchBoardList = async () => {
+      try {
+        const response = await axios.get('/board/boardList');
+        setBoardList(response.data);
+      } catch (error) {
+        console.error('Error fetching board list:', error);
+      }
+    };
+
+    fetchBoardList();
+  }, []);
+
+  const filteredDatas = boardList.filter((board) => {
+    switch (selectedButton) {
+      case "notice":
+        return board.defaultValue === "notice";
+      case "freeboard":
+        return board.defaultValue === "freeboard";
+      default:
+        return true;
+    }
+  });
+  const noticeData = filteredDatas.filter((board) => board.defaultValue === "notice");
+
   return (
     <>
       <div id="main1">
@@ -125,7 +152,7 @@ const Main = () => {
                 </Link>
               </li>
               <li>
-                <a href="#">
+                <a href="/community">
                   <FontAwesomeIcon id="icon" icon={faComments} />
                   자유게시판
                 </a>
@@ -134,12 +161,24 @@ const Main = () => {
             <div id="notice">
               <div>
                 <h3>공지사항</h3>
-                <a href="#">
+                <a href="/community">
                   더보기
                   <FontAwesomeIcon icon={faChevronRight} />
                 </a>
               </div>
-              <a href="#">공지사항에서 가져오는 데이터</a>
+              {noticeData.map((board) => (
+            <React.Fragment key={board.boardSeq}>
+              <li className="list_container">
+                <div className="text-container">
+                  <Link to={`/BoardView/${board.boardSeq}`}>
+                    <span>{board.boardSeq}</span>
+                    <span style={{ fontSize: '15px'}}>{board.boardTitle}</span>
+                  </Link>
+                </div>
+              </li>
+              <hr />
+            </React.Fragment>
+          ))}
             </div>
           </div>
         </div>
