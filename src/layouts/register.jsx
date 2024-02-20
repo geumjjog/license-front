@@ -23,11 +23,6 @@ const Register = () => {
   const [isNameValid, setIsNameValid] = useState(true);
   const [randomInitial, setRandomInitial] = useState("");
 
-  if (member.domain === "") {
-    console.log(member.email + "너 누구야");
-  } else {
-    console.log(member.email + member.domain + "너 누구니");
-  }
   // 이메일 중복확인
   const [isEmailCheckButtonDisabled, setIsEmailCheckButtonDisabled] =
     useState(false);

@@ -44,7 +44,8 @@ const Support = () => {
   return (
     <>
       <Header />
-      <div id="container">
+      <hr className="hr" />
+      <div id="support-container">
         <div id="category">
           <Tabs
             defaultActiveKey="국민취업지원제도"

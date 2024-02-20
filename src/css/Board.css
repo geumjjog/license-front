@@ -3,25 +3,30 @@
   padding: 0 108px;
 }
 
-.container {
+.comu_hr {
+  margin-bottom: 30px;
+}
+
+#Board .container {
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.comu_hr {
-  margin-bottom: 30px;
-}
 
-#community_header {
+#Board #community_header {
   padding: 0 180px;
   font-weight: 700;
   font-size: 40px;
 }
 
+#Board #community_header span{
+  text-align: center;
+}
+
 /* 커뮤니티 버튼 스타일링 */
-.container #community-buttons {
+#Board .container #community-buttons {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -29,13 +34,13 @@
   
 }
 
-.custom-lg-button {
+#Board .custom-lg-button {
   width: 230px;
   height: 100px;
   margin-right: 20px;
   margin-bottom: 50px;
   border-radius: 30px;
-  border: 3px solid #757df6;
+  border: 3px solid #64aee0;
   background-color: white;
   font-size: 25px;
   font-weight: 700;
@@ -44,85 +49,88 @@
   
 }
 
-.custom-lg-button.active {
-  background-color: #757df6;
-  border: 3px solid #757df6;
+#Board .custom-lg-button.active {
+  background-color: #64aee0;
+  border: 3px solid #64aee0;
   color: white;
 }
 
-.custom-lg-button:hover {
-  background-color: #757df6;
-  border: 3px solid #757df6;
+#Board .custom-lg-button:hover {
+  background-color: #64aee0;
+  border: 3px solid #64aee0;
   color: white;
 }
 
-.icon_btn {
+#Board .icon_btn {
   margin-right: 10px;
 }
 
 /* 커스텀 라인 스타일링 */
-.custom-line {
-  border: 2px solid #071197;
-}
-.custom_line {
+#Board .custom-line {
+  border: 2px solid #0056b3;
   padding: 0 110px;
 }
 
 /* 리스트 스타일링 */
-.your-component {
+.Board-bottom .your-component {
   margin-bottom: 50px;
 }
 
-.list_container {
+.Board-bottom .list_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.text-container h3 {
+.Board-bottom .text-container h3 {
   font-size: 20px;
   margin: 0;
   color: black;
 }
-.text-container h3:hover {
+.Board-bottom .text-container h3:hover {
 text-decoration: underline;
 }
-.boardDate {
+.Board-bottom .boardDate {
   color: #757df6;
   text-decoration: none;
   font-weight: bold;
   margin-left: 700px; /* 버튼과의 간격 조절 */
 }
 
-.custom-detail-link:hover {
+.Board-bottom .custom-detail-link:hover {
   text-decoration: underline;
   color: #0d005f;
 }
 
-.button-container {
+.Board-bottom .button-container {
   
   margin-bottom: 30px;
+}
+
+.Board-bottom .button-container button{
+  background-color: #64aee0;
 }
 
 .pagination-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
-.pagination {
+.pagination-container .pagination {
   display: inline-block;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.page-item {
+.pagination-container .page-item {
   display: inline-block;
   margin: 0 5px;
 }
 
-.page-link {
+.pagination-container .page-link {
   text-decoration: none;
   padding: 5px 10px;
   border: 1px solid #ccc;
@@ -131,17 +139,18 @@ text-decoration: underline;
   cursor: pointer;
 }
 
-.page-link.active {
+.pagination-container .page-link.active {
   background-color: #007bff;
   color: #fff;
 }
 
-li.page-item button {
+.pagination-container li.page-item button {
+  border: none;
+}
+
+.pagination-container .pagination li{
   border: none;
 }
 
 
 
-
-
-/* Quick 및 Footer 스타일링은 기존 스타일에 따라 추가하시면 됩니다. */

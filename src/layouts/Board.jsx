@@ -60,10 +60,10 @@ const Board = () => {
   useEffect(() => {
     const fetchBoardList = async () => {
       try {
-        const response = await axios.get('/board/boardList');
+        const response = await axios.get("/board/boardList");
         setBoardList(response.data);
       } catch (error) {
-        console.error('Error fetching board list:', error);
+        console.error("Error fetching board list:", error);
       }
     };
 
@@ -103,11 +103,11 @@ const Board = () => {
   const formatDate = (rawDate) => {
     const date = new Date(rawDate);
     const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const seconds = date.getSeconds().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const seconds = date.getSeconds().toString().padStart(2, "0");
 
     return `${year}-${month}-${day}`;
   };
@@ -131,7 +131,9 @@ const Board = () => {
           <div id="community-buttons" className="mb-2">
             <Button
               variant="secondary"
-              className={`custom-lg-button ${selectedButton === "notice" ? "active" : ""}`}
+              className={`custom-lg-button ${
+                selectedButton === "notice" ? "active" : ""
+              }`}
               onClick={() => handleButtonClick("notice")}
             >
               <FontAwesomeIcon icon={faBullhorn} className="icon_btn" />
@@ -139,7 +141,9 @@ const Board = () => {
             </Button>{" "}
             <Button
               variant="secondary"
-              className={`custom-lg-button ${selectedButton === "freeboard" ? "active" : ""}`}
+              className={`custom-lg-button ${
+                selectedButton === "freeboard" ? "active" : ""
+              }`}
               onClick={() => handleButtonClick("freeboard")}
             >
               <FontAwesomeIcon icon={faComments} className="icon_btn" />
@@ -148,7 +152,7 @@ const Board = () => {
           </div>
         </div>
 
-        <div className="container">
+        <div className="Board-bottom">
           <div id="re_contents">
             <input type="hidden" value={0} />
             <div className="button-container">
@@ -164,9 +168,13 @@ const Board = () => {
                   <li className="list_container">
                     <div className="text-container">
                       <Link to={`/BoardView/${board.boardSeq}`}>
-                        <span style={{ fontSize: '18px', color: 'black' }}>{board.boardSeq}</span>
+                        <span style={{ fontSize: "18px", color: "black" }}>
+                          {board.boardSeq}
+                        </span>
                         <span>&nbsp;</span>
-                        <span style={{ fontSize: '20px', color: '#060e7b' }}>{board.boardTitle}</span>
+                        <span style={{ fontSize: "20px", color: "#060e7b" }}>
+                          {board.boardTitle}
+                        </span>
                       </Link>
                     </div>
                     <div className="boardDate">
@@ -186,7 +194,9 @@ const Board = () => {
             <li key={number} className="page-item">
               <button
                 onClick={() => handlePageChange(number)}
-                className={`page-link ${currentPage === number ? 'active' : ''}`}
+                className={`page-link ${
+                  currentPage === number ? "active" : ""
+                }`}
               >
                 {number}
               </button>

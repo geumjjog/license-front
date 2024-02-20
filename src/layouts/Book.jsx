@@ -297,76 +297,84 @@ const Book = () => {
           <div id="rank">
             {/* YES24 도서 목록의 첫 번째 도서 출력 */}
             {yes24Data.length > 0 && (
-              <Card key={1} style={{ width: "18rem" }}>
-                <Card.Title className="card-category">YES24</Card.Title>
-                <Card.Img variant="top" src={yes24Data[0].imageName} style={{ width: '180px', height: '200px' }} />
-                <Card.Body>
-                  <Card.Title>
-                    <span>{yes24Data[0].bookName}</span>
-                  </Card.Title>
-                  <Card.Text className="card-text-custom">{yes24Data[0].bookPrice} <span className="small">원</span></Card.Text>
-                  <a href={yes24Data[0].viewDetail} target="_blank" rel="noopener noreferrer">
-                    <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
-                      자세히보기
-                    </button>
-                  </a>
-                </Card.Body>
-              </Card>
+              <div className="card-container">
+                <Card key={1} style={{ width: "18rem", backgroundColor: "#a8cfeb", borderColor: "#7a95a8"}}>
+                  <Card.Title className="card-category">YES24</Card.Title>
+                  <Card.Img variant="top" src={yes24Data[0].imageName} style={{ width: '180px', height: '200px' }} />
+                  <Card.Body>
+                    <Card.Title>
+                      <span>{yes24Data[0].bookName}</span>
+                    </Card.Title>
+                    <Card.Text className="card-text-custom">{yes24Data[0].bookPrice} <span className="small">원</span></Card.Text>
+                    <a href={yes24Data[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                      <button style={{ backgroundColor:"#7a95a8" }}>
+                        자세히보기
+                      </button>
+                    </a>
+                  </Card.Body>
+                </Card>
+              </div>
             )}
 
             {/* Kyobo 도서 목록의 첫 번째 도서 출력 */}
             {kyoboData.length > 0 && (
-              <Card key={2} style={{ width: "18rem" }}>
-                <Card.Title className="card-category">KYOBO</Card.Title>
-                <Card.Img variant="top" src={kyoboData[0].imageName} style={{ width: '180px', height: '200px' }} />
-                <Card.Body>
-                  <Card.Title>
-                    <span>{kyoboData[0].bookName}</span>
-                  </Card.Title>
-                  <Card.Text className="card-text-custom">{kyoboData[0].bookPrice} <span className="small">원</span></Card.Text>
-                  <a href={kyoboData[0].viewDetail} target="_blank" rel="noopener noreferrer">
-                    <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
-                      자세히보기
-                    </button>
-                  </a>
-                </Card.Body>
-              </Card>
+              <div className="card-container">
+                <Card key={2} style={{ width: "18rem", backgroundColor: "#a8cfeb", borderColor: "#7a95a8" }}>
+                  <Card.Title className="card-category">KYOBO</Card.Title>
+                  <Card.Img variant="top" src={kyoboData[0].imageName} style={{ width: '180px', height: '200px' }} />
+                  <Card.Body>
+                    <Card.Title>
+                      <span>{kyoboData[0].bookName}</span>
+                    </Card.Title>
+                    <Card.Text className="card-text-custom">{kyoboData[0].bookPrice} <span className="small">원</span></Card.Text>
+                    <a href={kyoboData[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                      <button style={{ backgroundColor:"#7a95a8" }}>
+                        자세히보기
+                      </button>
+                    </a>
+                  </Card.Body>
+                </Card>
+              </div>
             )}
 
             {/* Aladin 도서 목록의 첫 번째 도서 출력 */}
             {aladinData.length > 0 && (
-              <Card key={3} style={{ width: "18rem" }}>
-                <Card.Title className="card-category">ALADIN</Card.Title>
-                <Card.Img variant="top" src={aladinData[0].imageName} style={{ width: '180px', height: '200px' }} />
-                <Card.Body>
-                  <Card.Title>
-                    <span>{aladinData[0].bookName}</span>
-                  </Card.Title>
-                  <Card.Text className="card-text-custom">{aladinData[0].bookPrice} <span className="small">원</span></Card.Text>
-                  <a href={aladinData[0].viewDetail} target="_blank" rel="noopener noreferrer">
-                    <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
-                      자세히보기
-                    </button>
-                  </a>
-                </Card.Body>
-              </Card>
+              <div className="card-container">
+                <Card key={3} style={{ width: "18rem", backgroundColor: "#a8cfeb", borderColor: "#7a95a8" }}>
+                  <Card.Title className="card-category">ALADIN</Card.Title>
+                  <Card.Img variant="top" src={aladinData[0].imageName} style={{ width: '180px', height: '200px' }} />
+                  <Card.Body>
+                    <Card.Title>
+                      <span>{aladinData[0].bookName}</span>
+                    </Card.Title>
+                    <Card.Text className="card-text-custom">{aladinData[0].bookPrice} <span className="small">원</span></Card.Text>
+                    <a href={aladinData[0].viewDetail} target="_blank" rel="noopener noreferrer">
+                      <button style={{ backgroundColor:"#7a95a8" }}>
+                        자세히보기
+                      </button>
+                    </a>
+                  </Card.Body>
+                </Card>
+              </div>
             )}
           </div>
         </div>
         <div id="search">
-          <div id="searchbox">
+        <div id="searchbox">
             <input
               type="search"
               placeholder="자격증명을 입력해주세요"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleKeyDown}
+              style={{ height: '45px', verticalAlign: 'middle' }}
+
             />
-            <button type="button" onClick={() => handleSearch(searchTerm)}>
+            <button type="button" onClick={() => handleSearch(searchTerm)} style={{backgroundColor: "#7a95a8", verticalAlign: 'middle', marginBottom: "10px"}}>
               <FontAwesomeIcon id="icon" icon={faMagnifyingGlass} />
             </button>
           </div>
-          <button type="button" onClick={resetSearch} className="returnBtn">
+          <button type="button" onClick={resetSearch} style={{backgroundColor: "#7a95a8"}} className="returnBtn">
             <FontAwesomeIcon icon={faRotateLeft} />
           </button>
           <div id="result">
@@ -411,9 +419,7 @@ const Book = () => {
                         </a>
                         <div className="text-container">
                           <h3>{item.bookName}</h3>
-                          <p>
-                            Price : <span>{item.bookPrice} 원 </span>
-                          </p>
+                          <span className="price">Price : {item.bookPrice} 원 </span>
                         </div>
                         <a href={item.viewDetail} className="detail-link" target="_blank" rel="noopener noreferrer">
                           자세히 보기

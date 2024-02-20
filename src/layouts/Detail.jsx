@@ -11,7 +11,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Detail = () => {
   const [item, setItem] = useState(null);
@@ -528,13 +528,15 @@ const Detail = () => {
             <h3>추천도서</h3>
           </div>
           <div className="bookMore">
-          <Button variant="info" onClick={handleButtonClick}>more</Button>{' '}
+          <button style={{ backgroundColor: "white", color: "black" }} onClick={handleButtonClick}>&nbsp;자격증 더보기 &nbsp;
+          <FontAwesomeIcon id="icon" icon={faAngleRight} />
+          </button>{' '}
           </div>
           <div id="rank">
             {/* YES24 도서 목록의 첫 번째 도서 출력 */}
             {yes24Data.length > 0 && (
               <div className="card-container">
-                <Card key={1} style={{ width: "18rem" }}>
+                <Card key={1} style={{ width: "18rem", backgroundColor: "#a8cfeb", borderColor: "#7a95a8"}}>
                   <Card.Title className="card-category">YES24</Card.Title>
                   <Card.Img variant="top" src={yes24Data[0].imageName} style={{ width: '180px', height: '200px' }} />
                   <Card.Body>
@@ -543,7 +545,7 @@ const Detail = () => {
                     </Card.Title>
                     <Card.Text className="card-text-custom">{yes24Data[0].bookPrice} <span className="small">원</span></Card.Text>
                     <a href={yes24Data[0].viewDetail} target="_blank" rel="noopener noreferrer">
-                      <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                      <button style={{ backgroundColor:"#7a95a8" }}>
                         자세히보기
                       </button>
                     </a>
@@ -555,7 +557,7 @@ const Detail = () => {
             {/* Kyobo 도서 목록의 첫 번째 도서 출력 */}
             {kyoboData.length > 0 && (
               <div className="card-container">
-                <Card key={2} style={{ width: "18rem" }}>
+                <Card key={2} style={{ width: "18rem", backgroundColor: "#a8cfeb", borderColor: "#7a95a8" }}>
                   <Card.Title className="card-category">KYOBO</Card.Title>
                   <Card.Img variant="top" src={kyoboData[0].imageName} style={{ width: '180px', height: '200px' }} />
                   <Card.Body>
@@ -564,7 +566,7 @@ const Detail = () => {
                     </Card.Title>
                     <Card.Text className="card-text-custom">{kyoboData[0].bookPrice} <span className="small">원</span></Card.Text>
                     <a href={kyoboData[0].viewDetail} target="_blank" rel="noopener noreferrer">
-                      <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                      <button style={{ backgroundColor:"#7a95a8" }}>
                         자세히보기
                       </button>
                     </a>
@@ -576,7 +578,7 @@ const Detail = () => {
             {/* Aladin 도서 목록의 첫 번째 도서 출력 */}
             {aladinData.length > 0 && (
               <div className="card-container">
-                <Card key={3} style={{ width: "18rem" }}>
+                <Card key={3} style={{ width: "18rem", backgroundColor: "#a8cfeb", borderColor: "#7a95a8" }}>
                   <Card.Title className="card-category">ALADIN</Card.Title>
                   <Card.Img variant="top" src={aladinData[0].imageName} style={{ width: '180px', height: '200px' }} />
                   <Card.Body>
@@ -585,7 +587,7 @@ const Detail = () => {
                     </Card.Title>
                     <Card.Text className="card-text-custom">{aladinData[0].bookPrice} <span className="small">원</span></Card.Text>
                     <a href={aladinData[0].viewDetail} target="_blank" rel="noopener noreferrer">
-                      <button style={{ /* 버튼 스타일을 추가할 수 있음 */ }}>
+                      <button style={{ backgroundColor:"#7a95a8" }}>
                         자세히보기
                       </button>
                     </a>
