@@ -50,17 +50,17 @@ function App() {
       <Route path="/login/findpassword" element={<FindPwd />} />
       <Route path="/datetest" element={<DateTest />} />
       <Route path="/mbti" element={<MbtiPage />} />
-      {/* admin */}
-      <Route element={<AdminRoute />}>
-        <Route path="/admin" element={<MemberList />} />
-        <Route path="/editMember/:username" element={<EditMember />} />
-      </Route>
       <Route path="/book/:jmfldnm" element={<Book />} />
       <Route path="/RecommendBook" element={<RecommendBook />} />
       <Route path="/RecommendBookDetail" element={<RecommendBookDetail />} />
       <Route path="/BoardWrite" element={<BoardWrite />} />
       <Route path="/BoardView/:boardSeq" element={<BoardView />} />
       <Route path="/BoardModify/:boardSeq" element={<BoardModify />} />
+      {/* admin */}
+      <Route element={<AdminRoute />}>
+        <Route path="/admin" element={<MemberList />} />
+        <Route path="/editMember/:username" element={<EditMember />} />
+      </Route>
     </Routes>
   );
 }

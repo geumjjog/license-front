@@ -26,7 +26,7 @@ const Login = () => {
         console.log("로그인 성공");
         console.log(token);
         // 로그인 성공
-        alert("로그인 성공!");
+        alert("로그인 성공");
         navigate("/");
         // 토큰으로 username, role 가져오기
         // const responseC = await axios.post("/getIdRole", null, {

@@ -479,7 +479,7 @@ const Register = () => {
                     onClick={checkCodeSand}
                     disabled={isEmailCheckButton3Disabled}
                   >
-                    코드 확인
+                    인증 확인
                   </button>
                 </div>
               </td>
