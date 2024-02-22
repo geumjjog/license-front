@@ -69,140 +69,148 @@ const Support = () => {
               >
                 {dropdownVisibility1 ? "정책요약 ▲" : "정책요약 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility1}>
-                <ul>
-                  <li>
-                    <span>{data1.li_title0} : </span>
-                    {data1.li_cont0}
-                  </li>
-                  <li>
-                    <span>{data1.li_title1} : </span>
-                    {data1.li_cont1}
-                  </li>
-                  <li>
-                    <span>{data1.li_title2} : </span>
-                    {data1.li_cont2}
-                  </li>
-                  <li>
-                    <span>{data1.li_title3} : </span>
-                    {data1.li_cont3}
-                  </li>
-                  <li>
-                    <span>{data1.li_title4} : </span>
-                    {data1.li_cont4}
-                  </li>
-                  <li>
-                    <span>{data1.li_title5} : </span>
-                    {data1.li_cont5}
-                  </li>
-                  <li>
-                    <span>{data1.li_title6} : </span>
-                    {data1.li_cont6}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data1 && dropdownVisibility1 && (
+                <Dropdown visibility={dropdownVisibility1}>
+                  <ul>
+                    <li>
+                      <span>{data1.li_title0} : </span>
+                      {data1.li_cont0}
+                    </li>
+                    <li>
+                      <span>{data1.li_title1} : </span>
+                      {data1.li_cont1}
+                    </li>
+                    <li>
+                      <span>{data1.li_title2} : </span>
+                      {data1.li_cont2}
+                    </li>
+                    <li>
+                      <span>{data1.li_title3} : </span>
+                      {data1.li_cont3}
+                    </li>
+                    <li>
+                      <span>{data1.li_title4} : </span>
+                      {data1.li_cont4}
+                    </li>
+                    <li>
+                      <span>{data1.li_title5} : </span>
+                      {data1.li_cont5}
+                    </li>
+                    <li>
+                      <span>{data1.li_title6} : </span>
+                      {data1.li_cont6}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility2(!dropdownVisibility2)}
               >
                 {dropdownVisibility2 ? "신청자격 ▲" : "신청자격 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility2}>
-                <ul>
-                  <li>
-                    <span>{data1.li_title7} : </span>
-                    {data1.li_cont7}
-                  </li>
-                  <li>
-                    <span>{data1.li_title8} : </span>
-                    {data1.li_cont8}
-                  </li>
-                  <li>
-                    <span>{data1.li_title9} : </span>
-                    {data1.li_cont9}
-                  </li>
-                  <li>
-                    <span>{data1.li_title10} : </span>
-                    {data1.li_cont10}
-                  </li>
-                  <li>
-                    <span>{data1.li_title11} : </span>
-                    {data1.li_cont11}
-                  </li>
-                  <li>
-                    <span>{data1.li_title12} : </span>
-                    {data1.li_cont12}
-                  </li>
-                  <li>
-                    <span>{data1.li_title13} : </span>
-                    {data1.li_cont13}
-                  </li>
-                  <li>
-                    <span>{data1.li_title14} : </span>
-                    {data1.li_cont14}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data1 && dropdownVisibility2 && (
+                <Dropdown visibility={dropdownVisibility2}>
+                  <ul>
+                    <li>
+                      <span>{data1.li_title7} : </span>
+                      {data1.li_cont7}
+                    </li>
+                    <li>
+                      <span>{data1.li_title8} : </span>
+                      {data1.li_cont8}
+                    </li>
+                    <li>
+                      <span>{data1.li_title9} : </span>
+                      {data1.li_cont9}
+                    </li>
+                    <li>
+                      <span>{data1.li_title10} : </span>
+                      {data1.li_cont10}
+                    </li>
+                    <li>
+                      <span>{data1.li_title11} : </span>
+                      {data1.li_cont11}
+                    </li>
+                    <li>
+                      <span>{data1.li_title12} : </span>
+                      {data1.li_cont12}
+                    </li>
+                    <li>
+                      <span>{data1.li_title13} : </span>
+                      {data1.li_cont13}
+                    </li>
+                    <li>
+                      <span>{data1.li_title14} : </span>
+                      {data1.li_cont14}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility3(!dropdownVisibility3)}
               >
                 {dropdownVisibility3 ? "신청방법 ▲" : "신청방법 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility3}>
-                <ul>
-                  <li>
-                    <span>{data1.li_title15} : </span>
-                    {data1.li_cont15}
-                  </li>
-                  <li>
-                    <span>{data1.li_title16} : </span>
-                    {data1.li_cont16}
-                  </li>
-                  <li>
-                    <span>{data1.li_title17} : </span>
-                    {data1.li_cont17}
-                  </li>
-                  <li>
-                    <span>{data1.li_title18} : </span>
-                    {data1.li_cont18}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data1 && dropdownVisibility3 && (
+                <Dropdown visibility={dropdownVisibility3}>
+                  <ul>
+                    <li>
+                      <span>{data1.li_title15} : </span>
+                      {data1.li_cont15}
+                    </li>
+                    <li>
+                      <span>{data1.li_title16} : </span>
+                      {data1.li_cont16}
+                    </li>
+                    <li>
+                      <span>{data1.li_title17} : </span>
+                      {data1.li_cont17}
+                    </li>
+                    <li>
+                      <span>{data1.li_title18} : </span>
+                      {data1.li_cont18}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility4(!dropdownVisibility4)}
               >
                 {dropdownVisibility4 ? "기타 ▲" : "기타 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility4}>
-                <ul>
-                  <li>
-                    <span>{data1.li_title19} : </span>
-                    {data1.li_cont19}
-                  </li>
-                  <li>
-                    <span>{data1.li_title20} : </span>
-                    {data1.li_cont20}
-                  </li>
-                  <li>
-                    <span>{data1.li_title21} : </span>
-                    {data1.li_cont21}
-                  </li>
-                  <li>
-                    <span>{data1.li_title22} : </span>
-                    {data1.li_cont22}
-                  </li>
-                  <li>
-                    <span>{data1.li_title23} : </span>
-                    {data1.li_cont23}
-                  </li>
-                  <li>
-                    <span>{data1.li_title24} : </span>
-                    {data1.li_cont24}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data1 && dropdownVisibility4 && (
+                <Dropdown visibility={dropdownVisibility4}>
+                  <ul>
+                    <li>
+                      <span>{data1.li_title19} : </span>
+                      {data1.li_cont19}
+                    </li>
+                    <li>
+                      <span>{data1.li_title20} : </span>
+                      {data1.li_cont20}
+                    </li>
+                    <li>
+                      <span>{data1.li_title21} : </span>
+                      {data1.li_cont21}
+                    </li>
+                    <li>
+                      <span>{data1.li_title22} : </span>
+                      {data1.li_cont22}
+                    </li>
+                    <li>
+                      <span>{data1.li_title23} : </span>
+                      {data1.li_cont23}
+                    </li>
+                    <li>
+                      <span>{data1.li_title24} : </span>
+                      {data1.li_cont24}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
             </Tab>
             <Tab
               eventKey="청년도전 지원사업"
@@ -223,140 +231,148 @@ const Support = () => {
               >
                 {dropdownVisibility1 ? "정책요약 ▲" : "정책요약 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility1}>
-                <ul>
-                  <li>
-                    <span>{data2.li_title0} : </span>
-                    {data2.li_cont0}
-                  </li>
-                  <li>
-                    <span>{data2.li_title1} : </span>
-                    {data2.li_cont1}
-                  </li>
-                  <li>
-                    <span>{data2.li_title2} : </span>
-                    {data2.li_cont2}
-                  </li>
-                  <li>
-                    <span>{data2.li_title3} : </span>
-                    {data2.li_cont3}
-                  </li>
-                  <li>
-                    <span>{data2.li_title4} : </span>
-                    {data2.li_cont4}
-                  </li>
-                  <li>
-                    <span>{data2.li_title5} : </span>
-                    {data2.li_cont5}
-                  </li>
-                  <li>
-                    <span>{data2.li_title6} : </span>
-                    {data2.li_cont6}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data2 && dropdownVisibility1 && (
+                <Dropdown visibility={dropdownVisibility1}>
+                  <ul>
+                    <li>
+                      <span>{data2.li_title0} : </span>
+                      {data2.li_cont0}
+                    </li>
+                    <li>
+                      <span>{data2.li_title1} : </span>
+                      {data2.li_cont1}
+                    </li>
+                    <li>
+                      <span>{data2.li_title2} : </span>
+                      {data2.li_cont2}
+                    </li>
+                    <li>
+                      <span>{data2.li_title3} : </span>
+                      {data2.li_cont3}
+                    </li>
+                    <li>
+                      <span>{data2.li_title4} : </span>
+                      {data2.li_cont4}
+                    </li>
+                    <li>
+                      <span>{data2.li_title5} : </span>
+                      {data2.li_cont5}
+                    </li>
+                    <li>
+                      <span>{data2.li_title6} : </span>
+                      {data2.li_cont6}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility2(!dropdownVisibility2)}
               >
                 {dropdownVisibility2 ? "신청자격 ▲" : "신청자격 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility2}>
-                <ul>
-                  <li>
-                    <span>{data2.li_title7} : </span>
-                    {data2.li_cont7}
-                  </li>
-                  <li>
-                    <span>{data2.li_title8} : </span>
-                    {data2.li_cont8}
-                  </li>
-                  <li>
-                    <span>{data2.li_title9} : </span>
-                    {data2.li_cont9}
-                  </li>
-                  <li>
-                    <span>{data2.li_title10} : </span>
-                    {data2.li_cont10}
-                  </li>
-                  <li>
-                    <span>{data2.li_title11} : </span>
-                    {data2.li_cont11}
-                  </li>
-                  <li>
-                    <span>{data2.li_title12} : </span>
-                    {data2.li_cont12}
-                  </li>
-                  <li>
-                    <span>{data2.li_title13} : </span>
-                    {data2.li_cont13}
-                  </li>
-                  <li>
-                    <span>{data2.li_title14} : </span>
-                    {data2.li_cont14}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data2 && dropdownVisibility2 && (
+                <Dropdown visibility={dropdownVisibility2}>
+                  <ul>
+                    <li>
+                      <span>{data2.li_title7} : </span>
+                      {data2.li_cont7}
+                    </li>
+                    <li>
+                      <span>{data2.li_title8} : </span>
+                      {data2.li_cont8}
+                    </li>
+                    <li>
+                      <span>{data2.li_title9} : </span>
+                      {data2.li_cont9}
+                    </li>
+                    <li>
+                      <span>{data2.li_title10} : </span>
+                      {data2.li_cont10}
+                    </li>
+                    <li>
+                      <span>{data2.li_title11} : </span>
+                      {data2.li_cont11}
+                    </li>
+                    <li>
+                      <span>{data2.li_title12} : </span>
+                      {data2.li_cont12}
+                    </li>
+                    <li>
+                      <span>{data2.li_title13} : </span>
+                      {data2.li_cont13}
+                    </li>
+                    <li>
+                      <span>{data2.li_title14} : </span>
+                      {data2.li_cont14}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility3(!dropdownVisibility3)}
               >
                 {dropdownVisibility3 ? "신청방법 ▲" : "신청방법 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility3}>
-                <ul>
-                  <li>
-                    <span>{data2.li_title15} : </span>
-                    {data2.li_cont15}
-                  </li>
-                  <li>
-                    <span>{data2.li_title16} : </span>
-                    {data2.li_cont16}
-                  </li>
-                  <li>
-                    <span>{data2.li_title17} : </span>
-                    {data2.li_cont17}
-                  </li>
-                  <li>
-                    <span>{data2.li_title18} : </span>
-                    {data2.li_cont18}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data2 && dropdownVisibility3 && (
+                <Dropdown visibility={dropdownVisibility3}>
+                  <ul>
+                    <li>
+                      <span>{data2.li_title15} : </span>
+                      {data2.li_cont15}
+                    </li>
+                    <li>
+                      <span>{data2.li_title16} : </span>
+                      {data2.li_cont16}
+                    </li>
+                    <li>
+                      <span>{data2.li_title17} : </span>
+                      {data2.li_cont17}
+                    </li>
+                    <li>
+                      <span>{data2.li_title18} : </span>
+                      {data2.li_cont18}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility4(!dropdownVisibility4)}
               >
                 {dropdownVisibility4 ? "기타 ▲" : "기타 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility4}>
-                <ul>
-                  <li>
-                    <span>{data2.li_title19} : </span>
-                    {data2.li_cont19}
-                  </li>
-                  <li>
-                    <span>{data2.li_title20} : </span>
-                    {data2.li_cont20}
-                  </li>
-                  <li>
-                    <span>{data2.li_title21} : </span>
-                    {data2.li_cont21}
-                  </li>
-                  <li>
-                    <span>{data2.li_title22} : </span>
-                    {data2.li_cont22}
-                  </li>
-                  <li>
-                    <span>{data2.li_title23} : </span>
-                    {data2.li_cont23}
-                  </li>
-                  <li>
-                    <span>{data2.li_title24} : </span>
-                    {data2.li_cont24}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data2 && dropdownVisibility4 && (
+                <Dropdown visibility={dropdownVisibility4}>
+                  <ul>
+                    <li>
+                      <span>{data2.li_title19} : </span>
+                      {data2.li_cont19}
+                    </li>
+                    <li>
+                      <span>{data2.li_title20} : </span>
+                      {data2.li_cont20}
+                    </li>
+                    <li>
+                      <span>{data2.li_title21} : </span>
+                      {data2.li_cont21}
+                    </li>
+                    <li>
+                      <span>{data2.li_title22} : </span>
+                      {data2.li_cont22}
+                    </li>
+                    <li>
+                      <span>{data2.li_title23} : </span>
+                      {data2.li_cont23}
+                    </li>
+                    <li>
+                      <span>{data2.li_title24} : </span>
+                      {data2.li_cont24}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
             </Tab>
             <Tab eventKey="청년동행카드" title="국민내일배움카드">
               <div className="img-container">
@@ -374,140 +390,148 @@ const Support = () => {
               >
                 {dropdownVisibility1 ? "정책요약 ▲" : "정책요약 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility1}>
-                <ul>
-                  <li>
-                    <span>{data3.li_title0} : </span>
-                    {data3.li_cont0}
-                  </li>
-                  <li>
-                    <span>{data3.li_title1} : </span>
-                    {data3.li_cont1}
-                  </li>
-                  <li>
-                    <span>{data3.li_title2} : </span>
-                    {data3.li_cont2}
-                  </li>
-                  <li>
-                    <span>{data3.li_title3} : </span>
-                    {data3.li_cont3}
-                  </li>
-                  <li>
-                    <span>{data3.li_title4} : </span>
-                    {data3.li_cont4}
-                  </li>
-                  <li>
-                    <span>{data3.li_title5} : </span>
-                    {data3.li_cont5}
-                  </li>
-                  <li>
-                    <span>{data3.li_title6} : </span>
-                    {data3.li_cont6}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data3 && dropdownVisibility1 && (
+                <Dropdown visibility={dropdownVisibility1}>
+                  <ul>
+                    <li>
+                      <span>{data3.li_title0} : </span>
+                      {data3.li_cont0}
+                    </li>
+                    <li>
+                      <span>{data3.li_title1} : </span>
+                      {data3.li_cont1}
+                    </li>
+                    <li>
+                      <span>{data3.li_title2} : </span>
+                      {data3.li_cont2}
+                    </li>
+                    <li>
+                      <span>{data3.li_title3} : </span>
+                      {data3.li_cont3}
+                    </li>
+                    <li>
+                      <span>{data3.li_title4} : </span>
+                      {data3.li_cont4}
+                    </li>
+                    <li>
+                      <span>{data3.li_title5} : </span>
+                      {data3.li_cont5}
+                    </li>
+                    <li>
+                      <span>{data3.li_title6} : </span>
+                      {data3.li_cont6}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility2(!dropdownVisibility2)}
               >
                 {dropdownVisibility2 ? "신청자격 ▲" : "신청자격 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility2}>
-                <ul>
-                  <li>
-                    <span>{data3.li_title7} : </span>
-                    {data3.li_cont7}
-                  </li>
-                  <li>
-                    <span>{data3.li_title8} : </span>
-                    {data3.li_cont8}
-                  </li>
-                  <li>
-                    <span>{data3.li_title9} : </span>
-                    {data3.li_cont9}
-                  </li>
-                  <li>
-                    <span>{data3.li_title10} : </span>
-                    {data3.li_cont10}
-                  </li>
-                  <li>
-                    <span>{data3.li_title11} : </span>
-                    {data3.li_cont11}
-                  </li>
-                  <li>
-                    <span>{data3.li_title12} : </span>
-                    {data3.li_cont12}
-                  </li>
-                  <li>
-                    <span>{data3.li_title13} : </span>
-                    {data3.li_cont13}
-                  </li>
-                  <li>
-                    <span>{data3.li_title14} : </span>
-                    {data3.li_cont14}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data3 && dropdownVisibility2 && (
+                <Dropdown visibility={dropdownVisibility2}>
+                  <ul>
+                    <li>
+                      <span>{data3.li_title7} : </span>
+                      {data3.li_cont7}
+                    </li>
+                    <li>
+                      <span>{data3.li_title8} : </span>
+                      {data3.li_cont8}
+                    </li>
+                    <li>
+                      <span>{data3.li_title9} : </span>
+                      {data3.li_cont9}
+                    </li>
+                    <li>
+                      <span>{data3.li_title10} : </span>
+                      {data3.li_cont10}
+                    </li>
+                    <li>
+                      <span>{data3.li_title11} : </span>
+                      {data3.li_cont11}
+                    </li>
+                    <li>
+                      <span>{data3.li_title12} : </span>
+                      {data3.li_cont12}
+                    </li>
+                    <li>
+                      <span>{data3.li_title13} : </span>
+                      {data3.li_cont13}
+                    </li>
+                    <li>
+                      <span>{data3.li_title14} : </span>
+                      {data3.li_cont14}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility3(!dropdownVisibility3)}
               >
                 {dropdownVisibility3 ? "신청방법 ▲" : "신청방법 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility3}>
-                <ul>
-                  <li>
-                    <span>{data3.li_title15} : </span>
-                    {data3.li_cont15}
-                  </li>
-                  <li>
-                    <span>{data3.li_title16} : </span>
-                    {data3.li_cont16}
-                  </li>
-                  <li>
-                    <span>{data3.li_title17} : </span>
-                    {data3.li_cont17}
-                  </li>
-                  <li>
-                    <span>{data3.li_title18} : </span>
-                    {data3.li_cont18}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data3 && dropdownVisibility3 && (
+                <Dropdown visibility={dropdownVisibility3}>
+                  <ul>
+                    <li>
+                      <span>{data3.li_title15} : </span>
+                      {data3.li_cont15}
+                    </li>
+                    <li>
+                      <span>{data3.li_title16} : </span>
+                      {data3.li_cont16}
+                    </li>
+                    <li>
+                      <span>{data3.li_title17} : </span>
+                      {data3.li_cont17}
+                    </li>
+                    <li>
+                      <span>{data3.li_title18} : </span>
+                      {data3.li_cont18}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility4(!dropdownVisibility4)}
               >
                 {dropdownVisibility4 ? "기타 ▲" : "기타 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility4}>
-                <ul>
-                  <li>
-                    <span>{data3.li_title19} : </span>
-                    {data3.li_cont19}
-                  </li>
-                  <li>
-                    <span>{data3.li_title20} : </span>
-                    {data3.li_cont20}
-                  </li>
-                  <li>
-                    <span>{data3.li_title21} : </span>
-                    {data3.li_cont21}
-                  </li>
-                  <li>
-                    <span>{data3.li_title22} : </span>
-                    {data3.li_cont22}
-                  </li>
-                  <li>
-                    <span>{data3.li_title23} : </span>
-                    {data3.li_cont23}
-                  </li>
-                  <li>
-                    <span>{data3.li_title24} : </span>
-                    {data3.li_cont24}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data3 && dropdownVisibility4 && (
+                <Dropdown visibility={dropdownVisibility4}>
+                  <ul>
+                    <li>
+                      <span>{data3.li_title19} : </span>
+                      {data3.li_cont19}
+                    </li>
+                    <li>
+                      <span>{data3.li_title20} : </span>
+                      {data3.li_cont20}
+                    </li>
+                    <li>
+                      <span>{data3.li_title21} : </span>
+                      {data3.li_cont21}
+                    </li>
+                    <li>
+                      <span>{data3.li_title22} : </span>
+                      {data3.li_cont22}
+                    </li>
+                    <li>
+                      <span>{data3.li_title23} : </span>
+                      {data3.li_cont23}
+                    </li>
+                    <li>
+                      <span>{data3.li_title24} : </span>
+                      {data3.li_cont24}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
             </Tab>
             <Tab eventKey="청년추가" title="청년주택드림청약통장">
               <div className="img-container">
@@ -525,140 +549,148 @@ const Support = () => {
               >
                 {dropdownVisibility1 ? "정책요약 ▲" : "정책요약 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility1}>
-                <ul>
-                  <li>
-                    <span>{data4.li_title0} : </span>
-                    {data4.li_cont0}
-                  </li>
-                  <li>
-                    <span>{data4.li_title1} : </span>
-                    {data4.li_cont1}
-                  </li>
-                  <li>
-                    <span>{data4.li_title2} : </span>
-                    {data4.li_cont2}
-                  </li>
-                  <li>
-                    <span>{data4.li_title3} : </span>
-                    {data4.li_cont3}
-                  </li>
-                  <li>
-                    <span>{data4.li_title4} : </span>
-                    {data4.li_cont4}
-                  </li>
-                  <li>
-                    <span>{data4.li_title5} : </span>
-                    {data4.li_cont5}
-                  </li>
-                  <li>
-                    <span>{data4.li_title6} : </span>
-                    {data4.li_cont6}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data4 && dropdownVisibility1 && (
+                <Dropdown visibility={dropdownVisibility1}>
+                  <ul>
+                    <li>
+                      <span>{data4.li_title0} : </span>
+                      {data4.li_cont0}
+                    </li>
+                    <li>
+                      <span>{data4.li_title1} : </span>
+                      {data4.li_cont1}
+                    </li>
+                    <li>
+                      <span>{data4.li_title2} : </span>
+                      {data4.li_cont2}
+                    </li>
+                    <li>
+                      <span>{data4.li_title3} : </span>
+                      {data4.li_cont3}
+                    </li>
+                    <li>
+                      <span>{data4.li_title4} : </span>
+                      {data4.li_cont4}
+                    </li>
+                    <li>
+                      <span>{data4.li_title5} : </span>
+                      {data4.li_cont5}
+                    </li>
+                    <li>
+                      <span>{data4.li_title6} : </span>
+                      {data4.li_cont6}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility2(!dropdownVisibility2)}
               >
                 {dropdownVisibility2 ? "신청자격 ▲" : "신청자격 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility2}>
-                <ul>
-                  <li>
-                    <span>{data4.li_title7} : </span>
-                    {data4.li_cont7}
-                  </li>
-                  <li>
-                    <span>{data4.li_title8} : </span>
-                    {data4.li_cont8}
-                  </li>
-                  <li>
-                    <span>{data4.li_title9} : </span>
-                    {data4.li_cont9}
-                  </li>
-                  <li>
-                    <span>{data4.li_title10} : </span>
-                    {data4.li_cont10}
-                  </li>
-                  <li>
-                    <span>{data4.li_title11} : </span>
-                    {data4.li_cont11}
-                  </li>
-                  <li>
-                    <span>{data4.li_title12} : </span>
-                    {data4.li_cont12}
-                  </li>
-                  <li>
-                    <span>{data4.li_title13} : </span>
-                    {data4.li_cont13}
-                  </li>
-                  <li>
-                    <span>{data4.li_title14} : </span>
-                    {data4.li_cont14}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data4 && dropdownVisibility2 && (
+                <Dropdown visibility={dropdownVisibility2}>
+                  <ul>
+                    <li>
+                      <span>{data4.li_title7} : </span>
+                      {data4.li_cont7}
+                    </li>
+                    <li>
+                      <span>{data4.li_title8} : </span>
+                      {data4.li_cont8}
+                    </li>
+                    <li>
+                      <span>{data4.li_title9} : </span>
+                      {data4.li_cont9}
+                    </li>
+                    <li>
+                      <span>{data4.li_title10} : </span>
+                      {data4.li_cont10}
+                    </li>
+                    <li>
+                      <span>{data4.li_title11} : </span>
+                      {data4.li_cont11}
+                    </li>
+                    <li>
+                      <span>{data4.li_title12} : </span>
+                      {data4.li_cont12}
+                    </li>
+                    <li>
+                      <span>{data4.li_title13} : </span>
+                      {data4.li_cont13}
+                    </li>
+                    <li>
+                      <span>{data4.li_title14} : </span>
+                      {data4.li_cont14}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility3(!dropdownVisibility3)}
               >
                 {dropdownVisibility3 ? "신청방법 ▲" : "신청방법 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility3}>
-                <ul>
-                  <li>
-                    <span>{data4.li_title15} : </span>
-                    {data4.li_cont15}
-                  </li>
-                  <li>
-                    <span>{data4.li_title16} : </span>
-                    {data4.li_cont16}
-                  </li>
-                  <li>
-                    <span>{data4.li_title17} : </span>
-                    {data4.li_cont17}
-                  </li>
-                  <li>
-                    <span>{data4.li_title18} : </span>
-                    {data4.li_cont18}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data4 && dropdownVisibility3 && (
+                <Dropdown visibility={dropdownVisibility3}>
+                  <ul>
+                    <li>
+                      <span>{data4.li_title15} : </span>
+                      {data4.li_cont15}
+                    </li>
+                    <li>
+                      <span>{data4.li_title16} : </span>
+                      {data4.li_cont16}
+                    </li>
+                    <li>
+                      <span>{data4.li_title17} : </span>
+                      {data4.li_cont17}
+                    </li>
+                    <li>
+                      <span>{data4.li_title18} : </span>
+                      {data4.li_cont18}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility4(!dropdownVisibility4)}
               >
                 {dropdownVisibility4 ? "기타 ▲" : "기타 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility4}>
-                <ul>
-                  <li>
-                    <span>{data4.li_title19} : </span>
-                    {data4.li_cont19}
-                  </li>
-                  <li>
-                    <span>{data4.li_title20} : </span>
-                    {data4.li_cont20}
-                  </li>
-                  <li>
-                    <span>{data4.li_title21} : </span>
-                    {data4.li_cont21}
-                  </li>
-                  <li>
-                    <span>{data4.li_title22} : </span>
-                    {data4.li_cont22}
-                  </li>
-                  <li>
-                    <span>{data4.li_title23} : </span>
-                    {data4.li_cont23}
-                  </li>
-                  <li>
-                    <span>{data4.li_title24} : </span>
-                    {data4.li_cont24}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data4 && dropdownVisibility4 && (
+                <Dropdown visibility={dropdownVisibility4}>
+                  <ul>
+                    <li>
+                      <span>{data4.li_title19} : </span>
+                      {data4.li_cont19}
+                    </li>
+                    <li>
+                      <span>{data4.li_title20} : </span>
+                      {data4.li_cont20}
+                    </li>
+                    <li>
+                      <span>{data4.li_title21} : </span>
+                      {data4.li_cont21}
+                    </li>
+                    <li>
+                      <span>{data4.li_title22} : </span>
+                      {data4.li_cont22}
+                    </li>
+                    <li>
+                      <span>{data4.li_title23} : </span>
+                      {data4.li_cont23}
+                    </li>
+                    <li>
+                      <span>{data4.li_title24} : </span>
+                      {data4.li_cont24}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
             </Tab>
             <Tab eventKey="지원금" title="일자리채움청년지원금">
               <div className="img-container">
@@ -676,140 +708,148 @@ const Support = () => {
               >
                 {dropdownVisibility1 ? "정책요약 ▲" : "정책요약 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility1}>
-                <ul>
-                  <li>
-                    <span>{data5.li_title0} : </span>
-                    {data5.li_cont0}
-                  </li>
-                  <li>
-                    <span>{data5.li_title1} : </span>
-                    {data5.li_cont1}
-                  </li>
-                  <li>
-                    <span>{data5.li_title2} : </span>
-                    {data5.li_cont2}
-                  </li>
-                  <li>
-                    <span>{data5.li_title3} : </span>
-                    {data5.li_cont3}
-                  </li>
-                  <li>
-                    <span>{data5.li_title4} : </span>
-                    {data5.li_cont4}
-                  </li>
-                  <li>
-                    <span>{data5.li_title5} : </span>
-                    {data5.li_cont5}
-                  </li>
-                  <li>
-                    <span>{data5.li_title6} : </span>
-                    {data5.li_cont6}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data5 && dropdownVisibility1 && (
+                <Dropdown visibility={dropdownVisibility1}>
+                  <ul>
+                    <li>
+                      <span>{data5.li_title0} : </span>
+                      {data5.li_cont0}
+                    </li>
+                    <li>
+                      <span>{data5.li_title1} : </span>
+                      {data5.li_cont1}
+                    </li>
+                    <li>
+                      <span>{data5.li_title2} : </span>
+                      {data5.li_cont2}
+                    </li>
+                    <li>
+                      <span>{data5.li_title3} : </span>
+                      {data5.li_cont3}
+                    </li>
+                    <li>
+                      <span>{data5.li_title4} : </span>
+                      {data5.li_cont4}
+                    </li>
+                    <li>
+                      <span>{data5.li_title5} : </span>
+                      {data5.li_cont5}
+                    </li>
+                    <li>
+                      <span>{data5.li_title6} : </span>
+                      {data5.li_cont6}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility2(!dropdownVisibility2)}
               >
                 {dropdownVisibility2 ? "신청자격 ▲" : "신청자격 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility2}>
-                <ul>
-                  <li>
-                    <span>{data5.li_title7} : </span>
-                    {data5.li_cont7}
-                  </li>
-                  <li>
-                    <span>{data5.li_title8} : </span>
-                    {data5.li_cont8}
-                  </li>
-                  <li>
-                    <span>{data5.li_title9} : </span>
-                    {data5.li_cont9}
-                  </li>
-                  <li>
-                    <span>{data5.li_title10} : </span>
-                    {data5.li_cont10}
-                  </li>
-                  <li>
-                    <span>{data5.li_title11} : </span>
-                    {data5.li_cont11}
-                  </li>
-                  <li>
-                    <span>{data5.li_title12} : </span>
-                    {data5.li_cont12}
-                  </li>
-                  <li>
-                    <span>{data5.li_title13} : </span>
-                    {data5.li_cont13}
-                  </li>
-                  <li>
-                    <span>{data5.li_title14} : </span>
-                    {data5.li_cont14}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data5 && dropdownVisibility2 && (
+                <Dropdown visibility={dropdownVisibility2}>
+                  <ul>
+                    <li>
+                      <span>{data5.li_title7} : </span>
+                      {data5.li_cont7}
+                    </li>
+                    <li>
+                      <span>{data5.li_title8} : </span>
+                      {data5.li_cont8}
+                    </li>
+                    <li>
+                      <span>{data5.li_title9} : </span>
+                      {data5.li_cont9}
+                    </li>
+                    <li>
+                      <span>{data5.li_title10} : </span>
+                      {data5.li_cont10}
+                    </li>
+                    <li>
+                      <span>{data5.li_title11} : </span>
+                      {data5.li_cont11}
+                    </li>
+                    <li>
+                      <span>{data5.li_title12} : </span>
+                      {data5.li_cont12}
+                    </li>
+                    <li>
+                      <span>{data5.li_title13} : </span>
+                      {data5.li_cont13}
+                    </li>
+                    <li>
+                      <span>{data5.li_title14} : </span>
+                      {data5.li_cont14}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility3(!dropdownVisibility3)}
               >
                 {dropdownVisibility3 ? "신청방법 ▲" : "신청방법 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility3}>
-                <ul>
-                  <li>
-                    <span>{data5.li_title15} : </span>
-                    {data5.li_cont15}
-                  </li>
-                  <li>
-                    <span>{data5.li_title16} : </span>
-                    {data5.li_cont16}
-                  </li>
-                  <li>
-                    <span>{data5.li_title17} : </span>
-                    {data5.li_cont17}
-                  </li>
-                  <li>
-                    <span>{data5.li_title18} : </span>
-                    {data5.li_cont18}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data5 && dropdownVisibility3 && (
+                <Dropdown visibility={dropdownVisibility3}>
+                  <ul>
+                    <li>
+                      <span>{data5.li_title15} : </span>
+                      {data5.li_cont15}
+                    </li>
+                    <li>
+                      <span>{data5.li_title16} : </span>
+                      {data5.li_cont16}
+                    </li>
+                    <li>
+                      <span>{data5.li_title17} : </span>
+                      {data5.li_cont17}
+                    </li>
+                    <li>
+                      <span>{data5.li_title18} : </span>
+                      {data5.li_cont18}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
               <button
                 id="down_btn"
                 onClick={() => setDropdownVisibility4(!dropdownVisibility4)}
               >
                 {dropdownVisibility4 ? "기타 ▲" : "기타 ▼"}
               </button>
-              <Dropdown visibility={dropdownVisibility4}>
-                <ul>
-                  <li>
-                    <span>{data5.li_title19} : </span>
-                    {data5.li_cont19}
-                  </li>
-                  <li>
-                    <span>{data5.li_title20} : </span>
-                    {data5.li_cont20}
-                  </li>
-                  <li>
-                    <span>{data5.li_title21} : </span>
-                    {data5.li_cont21}
-                  </li>
-                  <li>
-                    <span>{data5.li_title22} : </span>
-                    {data5.li_cont22}
-                  </li>
-                  <li>
-                    <span>{data5.li_title23} : </span>
-                    {data5.li_cont23}
-                  </li>
-                  <li>
-                    <span>{data5.li_title24} : </span>
-                    {data5.li_cont24}
-                  </li>
-                </ul>
-              </Dropdown>
+              {data5 && dropdownVisibility4 && (
+                <Dropdown visibility={dropdownVisibility4}>
+                  <ul>
+                    <li>
+                      <span>{data5.li_title19} : </span>
+                      {data5.li_cont19}
+                    </li>
+                    <li>
+                      <span>{data5.li_title20} : </span>
+                      {data5.li_cont20}
+                    </li>
+                    <li>
+                      <span>{data5.li_title21} : </span>
+                      {data5.li_cont21}
+                    </li>
+                    <li>
+                      <span>{data5.li_title22} : </span>
+                      {data5.li_cont22}
+                    </li>
+                    <li>
+                      <span>{data5.li_title23} : </span>
+                      {data5.li_cont23}
+                    </li>
+                    <li>
+                      <span>{data5.li_title24} : </span>
+                      {data5.li_cont24}
+                    </li>
+                  </ul>
+                </Dropdown>
+              )}
             </Tab>
           </Tabs>
         </div>
